@@ -6,22 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3ac7d70b-d1cf-48c5-b158-f47fe452bd9c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/common/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/common/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/resources/properties/dubbox.properties" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/resources/properties/dubbox.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/resources/spring/applicationContext-dubbox.xml" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/resources/spring/applicationContext-dubbox.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dao/src/main/resources/properties/db.properties" beforeDir="false" afterPath="$PROJECT_DIR$/dao/src/main/resources/properties/db.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dao/src/main/resources/spring/applicationContext-dao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/dao/src/main/resources/spring/applicationContext-dao.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service_sellergoods/src/main/resources/spring/applicationContext-service.xml" beforeDir="false" afterPath="$PROJECT_DIR$/service_sellergoods/src/main/resources/spring/applicationContext-service.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service_sellergoods/src/main/resources/spring/applicationContext-tx.xml" beforeDir="false" afterPath="$PROJECT_DIR$/service_sellergoods/src/main/resources/spring/applicationContext-tx.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_manager/src/main/resources/spring/spring-security.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web_manager/src/main/resources/spring/spring-security.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_manager/src/main/resources/spring/springmvc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web_manager/src/main/resources/spring/springmvc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_portal/src/main/resources/spring/springmvc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web_portal/src/main/resources/spring/springmvc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_shop/src/main/resources/spring/spring-security.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web_shop/src/main/resources/spring/spring-security.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_shop/src/main/resources/spring/springmvc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web_shop/src/main/resources/spring/springmvc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/服务器启动项.txt" beforeDir="false" afterPath="$PROJECT_DIR$/服务器启动项.txt" afterDir="false" />
-    </list>
+    <list default="true" id="3ac7d70b-d1cf-48c5-b158-f47fe452bd9c" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -867,6 +852,9 @@
       <workItem from="1591021137803" duration="46000" />
       <workItem from="1591021297736" duration="70000" />
       <workItem from="1591021847473" duration="496000" />
+      <workItem from="1591023147840" duration="25000" />
+      <workItem from="1591026457630" duration="34000" />
+      <workItem from="1591026728789" duration="18000" />
     </task>
     <servers />
   </component>
