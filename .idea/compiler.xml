@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="service_sellergoods" />
+        <module name="interface" />
+        <module name="web_shop" />
+        <module name="pojo" />
+        <module name="web_portal" />
+        <module name="dao" />
+        <module name="web_manager" />
+        <module name="common" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="service_manager" target="1.8" />
+      <module name="service_sellerManagement" target="1.8" />
+      <module name="web_seller" target="1.8" />
+      <module name="web_sellerManagement" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_STRING" value="-encoding utf-8" />
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="FMStorePro" options="" />
+      <module name="common" options="" />
+      <module name="dao" options="" />
+      <module name="interface" options="" />
+      <module name="pojo" options="" />
+      <module name="service_manager" options="" />
+      <module name="service_sellerManagement" options="" />
+      <module name="service_sellergoods" options="" />
+      <module name="web_manager" options="" />
+      <module name="web_portal" options="" />
+      <module name="web_seller" options="" />
+      <module name="web_sellerManagement" options="" />
+      <module name="web_shop" options="" />
+    </option>
+  </component>
+</project>

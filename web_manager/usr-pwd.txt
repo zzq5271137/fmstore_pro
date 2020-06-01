@@ -1,0 +1,2 @@
+====================== manager ======================
+admin: admin (在spring-security.xml中配置的)

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"
+          name="viewport">
+    <title>商品管理</title>
+    <link rel="icon" href="../img/favicon.ico">
+    <link rel="stylesheet" href="../plugins/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../plugins/adminLTE/css/AdminLTE.css">
+    <link rel="stylesheet" href="../plugins/adminLTE/css/skins/_all-skins.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../plugins/pageination/zpageNav.css">
+    <script src="../plugins/jQuery/jquery-2.2.3.min.js"></script>
+    <script src="../plugins/bootstrap/js/bootstrap.min.js"></script>
+</head>
+<body class="hold-transition skin-red sidebar-mini">
+
+<div id="app">
+    <!-- 标题 -->
+    <div class="box-header with-border" style="height: 64.5px;line-height: 54px;">
+        <h3 class="box-title">商品审核</h3>
+    </div>
+
+    <!-- 主体 -->
+    <div class="box-body">
+        <div class="table-box">
+            <!-- 工具栏 -->
+            <div class="pull-left">
+                <div class="form-group form-inline">
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-default" title="新建"
+                                onClick="window.location.href = '/admin/goods_edit.html';">
+                            <i class="fa fa-file-o"></i> 新建
+                        </button>
+                        <button type="button" class="btn btn-default" title="删除"
+                                @click="deleteGoods">
+                            <i class="fa fa-trash-o"></i> 删除
+                        </button>
+                        <button type="button" class="btn btn-default" title="刷新"
+                                onclick="window.location.reload();">
+                            <i class="fa fa-refresh"></i> 刷新
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 搜索栏 -->
+            <div class="box-tools pull-right">
+                <div class="form-group form-inline">
+                    <div class="has-feedback">
+                        状态：
+                        <select v-model="goodsSearch.auditStatus" class="form-control"
+                                @change="getGoodsPage(1)">
+                            <option value="">全部</option>
+                            <option value="0">未申请</option>
+                            <option value="1">申请中</option>
+                            <option value="2">审核通过</option>
+                            <option value="3">已驳回</option>
+                        </select>
+                        商品名称：<input type="text" class="form-control"
+                                    v-model="goodsSearch.goodsName"
+                                    @keydown="onSearchKeydown($event)">
+                        <button class="btn btn-default" @click="getGoodsPage(1)">查询</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 数据列表 -->
+            <table id="dataList" class="table table-bordered table-striped table-hover dataTable">
+                <thead>
+                <tr>
+                    <th class="" style="padding-right:0px">
+                        <input id="selall" type="checkbox" class="icheckbox_square-blue">
+                    </th>
+                    <th class="sorting_asc">商品ID</th>
+                    <th class="sorting">商品名称</th>
+                    <th class="sorting">商品价格</th>
+                    <th class="sorting">一级分类</th>
+                    <th class="sorting">二级分类</th>
+                    <th class="sorting">三级分类</th>
+                    <th class="sorting">状态</th>
+                    <th class="text-center">操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr v-for="goodsItem in goodsList">
+                    <td>
+                        <input type="checkbox"
+                               v-model:checked="selectStates[goodsItem.id]"
+                               @click="clickCheckBox($event, goodsItem.id)">
+                    </td>
+                    <td>{{ goodsItem.id }}</td>
+                    <td>{{ goodsItem.goodsName }}</td>
+                    <td>{{ goodsItem.price }}</td>
+                    <td>{{ allItemCat[goodsItem.category1Id] }}</td>
+                    <td>{{ allItemCat[goodsItem.category2Id] }}</td>
+                    <td>{{ allItemCat[goodsItem.category3Id] }}</td>
+                    <td>
+                        <span>{{ auditStatuses[goodsItem.auditStatus] }}</span>
+                    </td>
+                    <td class="text-center">
+                        <a type="button" class="btn bg-olive btn-xs"
+                           :href="'/admin/goods_edit.html?id=' + goodsItem.id">修改
+                        </a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+
+            <!-- 分页 -->
+            <zpagenav v-bind:page="page" v-bind:page-size="pageSize" v-bind:total="total"
+                      v-bind:max-page="maxPage" v-on:pagehandler="getGoodsPage">
+            </zpagenav>
+        </div>
+    </div>
+</div>
+
+</body>
+
+<script src="../plugins/vue/vuejs-2.5.16.js"></script>
+<script src="../plugins/vue/axios-0.18.0.js"></script>
+<script src="../plugins/vue/qs.js"></script>
+<script src="../plugins/pageination/zpageNav.js"></script>
+<script src="../js/goods.js"></script>
+
+</html>
