@@ -214,7 +214,7 @@
                 <version>${commons-fileupload.version}</version>
             </dependency>
 
-            <!-- 缓存 -->
+            <!-- Redis相关(缓存) -->
             <dependency>
                 <groupId>redis.clients</groupId>
                 <artifactId>jedis</artifactId>
