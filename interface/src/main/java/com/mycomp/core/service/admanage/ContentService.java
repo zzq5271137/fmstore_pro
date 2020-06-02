@@ -21,4 +21,11 @@ public interface ContentService {
 
     List<Content> getContentByCategoryId(Long categoryId);
 
+    /*
+     * 获取数据的时候先从Redis中获取, 如果获取到数据则直接返回, 就不用访问数据库了;
+     * 如果获取不到数据, 可以从数据库中查询, 查询到后放入Redis中一份, 下回就可以直接从Redis中查询到;
+     * 这样大大降低了数据库的高并发访问压力;
+     */
+    List<Content> getContentByCategoryIdFromRedis(Long categoryId);
+
 }

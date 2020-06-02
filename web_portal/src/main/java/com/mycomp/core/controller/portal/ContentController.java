@@ -18,7 +18,7 @@ public class ContentController {
 
     @RequestMapping("/getContentByCategoryId")
     public List<Content> getContentByCategoryId(@RequestParam("categoryId") Long categoryId) {
-        return contentService.getContentByCategoryId(categoryId);
+        return contentService.getContentByCategoryIdFromRedis(categoryId);
     }
 
 }

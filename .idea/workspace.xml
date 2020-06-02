@@ -2,13 +2,15 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="web_portal:war exploded" />
+      <artifact name="web_manager:war exploded" />
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3ac7d70b-d1cf-48c5-b158-f47fe452bd9c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/common/src/main/resources/properties/redis-config.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/resources/spring/applicationContext-redis.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/com/mycomp/utils/RedisKeys.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interface/src/main/java/com/mycomp/core/service/admanage/ContentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/interface/src/main/java/com/mycomp/core/service/admanage/ContentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service_sellergoods/src/main/java/com/mycomp/core/service/admanage/impl/ContentServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/service_sellergoods/src/main/java/com/mycomp/core/service/admanage/impl/ContentServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web_portal/src/main/java/com/mycomp/core/controller/portal/ContentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/web_portal/src/main/java/com/mycomp/core/controller/portal/ContentController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,10 +58,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Class" />
         <option value="Jsp File" />
         <option value="JavaScript File" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -105,7 +107,7 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="DatabaseDriversLRU" value="mysql" />
-    <property name="MyBatisLogPluginindexNum" value="5267" />
+    <property name="MyBatisLogPluginindexNum" value="5311" />
     <property name="MyBatisLogPluginparameters" value="Parameters:" />
     <property name="MyBatisLogPluginpreparing" value="Preparing:" />
     <property name="MyBatisLogPluginrunning" value="true" />
@@ -740,6 +742,11 @@
                 <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
                 <item name="Tomcat Server" type="7427dc5b:ServiceModel$ServiceGroupNode" />
               </path>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="Tomcat Server" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                <item name="Finished" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              </path>
             </expand>
             <select />
           </treeState>
@@ -859,7 +866,7 @@
       <workItem from="1591026457630" duration="34000" />
       <workItem from="1591026728789" duration="18000" />
       <workItem from="1591069288139" duration="1821000" />
-      <workItem from="1591071569920" duration="11000" />
+      <workItem from="1591071569920" duration="5411000" />
     </task>
     <servers />
   </component>
@@ -902,38 +909,38 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="594" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1589536677455" />
-    <state width="1324" height="313" key="GridCell.Tab.0.bottom" timestamp="1591020825195">
+    <state width="1324" height="262" key="GridCell.Tab.0.bottom" timestamp="1591077106957">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1324" height="313" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1591020825195" />
-    <state width="1324" height="313" key="GridCell.Tab.0.center" timestamp="1591020825195">
+    <state width="1324" height="262" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1591077106957" />
+    <state width="1324" height="262" key="GridCell.Tab.0.center" timestamp="1591077106957">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1324" height="313" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1591020825195" />
-    <state width="1324" height="313" key="GridCell.Tab.0.left" timestamp="1591020825195">
+    <state width="1324" height="262" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1591077106957" />
+    <state width="1324" height="262" key="GridCell.Tab.0.left" timestamp="1591077106957">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1324" height="313" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1591020825195" />
-    <state width="1324" height="313" key="GridCell.Tab.0.right" timestamp="1591020825195">
+    <state width="1324" height="262" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1591077106957" />
+    <state width="1324" height="262" key="GridCell.Tab.0.right" timestamp="1591077106957">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1324" height="313" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1591020825195" />
-    <state width="1324" height="313" key="GridCell.Tab.1.bottom" timestamp="1591020825195">
+    <state width="1324" height="262" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1591077106957" />
+    <state width="1324" height="262" key="GridCell.Tab.1.bottom" timestamp="1591077106957">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1324" height="313" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1591020825195" />
-    <state width="1324" height="313" key="GridCell.Tab.1.center" timestamp="1591020825195">
+    <state width="1324" height="262" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1591077106957" />
+    <state width="1324" height="262" key="GridCell.Tab.1.center" timestamp="1591077106957">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1324" height="313" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1591020825195" />
-    <state width="1324" height="313" key="GridCell.Tab.1.left" timestamp="1591020825195">
+    <state width="1324" height="262" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1591077106957" />
+    <state width="1324" height="262" key="GridCell.Tab.1.left" timestamp="1591077106957">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1324" height="313" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1591020825195" />
-    <state width="1324" height="313" key="GridCell.Tab.1.right" timestamp="1591020825195">
+    <state width="1324" height="262" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1591077106957" />
+    <state width="1324" height="262" key="GridCell.Tab.1.right" timestamp="1591077106957">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1324" height="313" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1591020825195" />
+    <state width="1324" height="262" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1591077106957" />
     <state width="1321" height="260" key="GridCell.Tab.2.bottom" timestamp="1590769045970">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
