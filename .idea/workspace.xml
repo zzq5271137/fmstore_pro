@@ -7,10 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3ac7d70b-d1cf-48c5-b158-f47fe452bd9c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/com/mycomp/utils/RedisKeys.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/interface/src/main/java/com/mycomp/core/service/admanage/ContentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/interface/src/main/java/com/mycomp/core/service/admanage/ContentService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service_sellergoods/src/main/java/com/mycomp/core/service/admanage/impl/ContentServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/service_sellergoods/src/main/java/com/mycomp/core/service/admanage/impl/ContentServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_portal/src/main/java/com/mycomp/core/controller/portal/ContentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/web_portal/src/main/java/com/mycomp/core/controller/portal/ContentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/服务器启动项.txt" beforeDir="false" afterPath="$PROJECT_DIR$/服务器启动项.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -742,11 +739,6 @@
                 <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
                 <item name="Tomcat Server" type="7427dc5b:ServiceModel$ServiceGroupNode" />
               </path>
-              <path>
-                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-                <item name="Tomcat Server" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-                <item name="Finished" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              </path>
             </expand>
             <select />
           </treeState>
@@ -867,6 +859,11 @@
       <workItem from="1591026728789" duration="18000" />
       <workItem from="1591069288139" duration="1821000" />
       <workItem from="1591071569920" duration="5411000" />
+      <workItem from="1591087453494" duration="497000" />
+      <workItem from="1591087992641" duration="283000" />
+      <workItem from="1591088331739" duration="258000" />
+      <workItem from="1591088655364" duration="2601000" />
+      <workItem from="1591150619749" duration="896000" />
     </task>
     <servers />
   </component>
