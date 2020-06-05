@@ -14,6 +14,7 @@
         <module>common</module>
         <module>pojo</module>
         <module>dao</module>
+        <module>solr_util</module>
         <module>interface</module>
         <module>service_sellergoods</module>
         <module>web_manager</module>
@@ -266,11 +267,16 @@
                 <version>2.10</version>
             </dependency>
 
-            <!-- solr客户端 -->
+            <!-- Solr客户端相关 -->
             <dependency>
                 <groupId>org.apache.solr</groupId>
                 <artifactId>solr-solrj</artifactId>
                 <version>${solrj.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.data</groupId>
+                <artifactId>spring-data-solr</artifactId>
+                <version>1.5.5.RELEASE</version>
             </dependency>
 
             <dependency>

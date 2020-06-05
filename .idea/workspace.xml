@@ -2,13 +2,32 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="web_manager:war exploded" />
+      <artifact name="service_sellergoods:war exploded" />
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3ac7d70b-d1cf-48c5-b158-f47fe452bd9c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/web_portal/solr域配置/schema.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web_portal/solr域配置/solr域配置" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/solr_util/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/solr_util/src/main/java/com/mycomp/utils/DataImportToSolrUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/solr_util/src/main/resources/spring/applicationContext-solr.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/solr_util/src/main/resources/spring/applicationContext.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/common/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pojo/src/main/java/com/mycomp/core/pojo/item/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/pojo/src/main/java/com/mycomp/core/pojo/item/Item.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/item/Item.class" beforeDir="false" afterPath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/item/Item.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service_sellergoods/target/service_sellergoods/WEB-INF/lib/common-1.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/service_sellergoods/target/service_sellergoods/WEB-INF/lib/common-1.0.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service_sellergoods/target/service_sellergoods/WEB-INF/lib/commons-collections-3.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/service_sellergoods/target/service_sellergoods/WEB-INF/lib/dao-1.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/service_sellergoods/target/service_sellergoods/WEB-INF/lib/dao-1.0.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service_sellergoods/target/service_sellergoods/WEB-INF/lib/interface-1.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/service_sellergoods/target/service_sellergoods/WEB-INF/lib/interface-1.0.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service_sellergoods/target/service_sellergoods/WEB-INF/lib/pojo-1.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/service_sellergoods/target/service_sellergoods/WEB-INF/lib/pojo-1.0.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service_sellergoods/target/service_sellergoods/WEB-INF/lib/spring-data-commons-1.12.2.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web_manager/target/web_manager/WEB-INF/lib/common-1.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/web_manager/target/web_manager/WEB-INF/lib/common-1.0.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web_manager/target/web_manager/WEB-INF/lib/commons-collections-3.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web_manager/target/web_manager/WEB-INF/lib/interface-1.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/web_manager/target/web_manager/WEB-INF/lib/interface-1.0.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web_manager/target/web_manager/WEB-INF/lib/pojo-1.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/web_manager/target/web_manager/WEB-INF/lib/pojo-1.0.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web_manager/target/web_manager/WEB-INF/lib/spring-data-commons-1.12.2.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web_portal/solr域配置/schema.xml" beforeDir="false" afterPath="$PROJECT_DIR$/common/solr域配置/schema.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web_portal/solr域配置/solr域配置" beforeDir="false" afterPath="$PROJECT_DIR$/common/solr域配置/solr域配置" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,10 +75,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Jsp File" />
         <option value="JavaScript File" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -105,7 +124,7 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="DatabaseDriversLRU" value="mysql" />
-    <property name="MyBatisLogPluginindexNum" value="5311" />
+    <property name="MyBatisLogPluginindexNum" value="5318" />
     <property name="MyBatisLogPluginparameters" value="Parameters:" />
     <property name="MyBatisLogPluginpreparing" value="Preparing:" />
     <property name="MyBatisLogPluginrunning" value="true" />
@@ -126,12 +145,12 @@
     <selection>jr</selection>
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="H:\IDEA_workspace\FMStorePro\web_portal\solr域配置" />
+      <recent name="H:\IDEA_workspace\FMStorePro\web_portal\src\main\webapp\plugins" />
+      <recent name="H:\IDEA_workspace\FMStorePro\web_portal\src\main\resources" />
       <recent name="H:\IDEA_workspace\FMStorePro" />
-      <recent name="H:\IDEA_workspace\FMStorePro\web_sellerManagement\src\main\webapp" />
-      <recent name="H:\IDEA_workspace\FMStorePro\dao\src\main\resources\com\mycomp\core\dao" />
-      <recent name="H:\IDEA_workspace\FMStorePro\generator" />
-      <recent name="H:\IDEA_workspace\FMStorePro\generator\src" />
+      <recent name="H:\IDEA_workspace\FMStorePro\web_manager\src\main\resources" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.mycomp.core.controller.portal" />
@@ -140,12 +159,12 @@
       <recent name="com.mycomp.core.controller.goodsmanage" />
       <recent name="com.mycomp.core.controller.sellerregister" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="H:\IDEA_workspace\FMStorePro\web_portal\solr域配置" />
-      <recent name="H:\IDEA_workspace\FMStorePro\web_portal\src\main\webapp\plugins" />
-      <recent name="H:\IDEA_workspace\FMStorePro\web_portal\src\main\resources" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="H:\IDEA_workspace\FMStorePro\common" />
       <recent name="H:\IDEA_workspace\FMStorePro" />
-      <recent name="H:\IDEA_workspace\FMStorePro\web_manager\src\main\resources" />
+      <recent name="H:\IDEA_workspace\FMStorePro\web_sellerManagement\src\main\webapp" />
+      <recent name="H:\IDEA_workspace\FMStorePro\dao\src\main\resources\com\mycomp\core\dao" />
+      <recent name="H:\IDEA_workspace\FMStorePro\generator" />
     </key>
   </component>
   <component name="RestServicesNavigator">
@@ -158,7 +177,20 @@
       <select />
     </treeState>
   </component>
-  <component name="RunManager" selected="Tomcat Server.web_portal">
+  <component name="RunManager" selected="Application.DataImportToSolrUtil">
+    <configuration name="DataImportToSolrUtil" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.mycomp.utils.DataImportToSolrUtil" />
+      <module name="solr_util" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.mycomp.utils.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.30" ALTERNATIVE_JRE_ENABLED="false">
       <option name="BROWSER_ID" value="98ca6316-2f89-46d9-a9e5-fa9e2b0625b3" />
       <option name="COMMON_VM_ARGUMENTS" value="-Dfile.encoding=UTF-8" />
@@ -723,11 +755,17 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="Application.DataImportToSolrUtil" />
       <item itemvalue="Tomcat Server.service_sellergoods" />
       <item itemvalue="Tomcat Server.web_manager" />
       <item itemvalue="Tomcat Server.web_shop" />
       <item itemvalue="Tomcat Server.web_portal" />
     </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.DataImportToSolrUtil" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="ServiceViewManager">
     <option name="viewStates">
@@ -864,7 +902,24 @@
       <workItem from="1591087992641" duration="283000" />
       <workItem from="1591088331739" duration="258000" />
       <workItem from="1591088655364" duration="2601000" />
-      <workItem from="1591150619749" duration="2042000" />
+      <workItem from="1591150619749" duration="2697000" />
+      <workItem from="1591179203776" duration="395000" />
+      <workItem from="1591179974258" duration="104000" />
+      <workItem from="1591180188557" duration="59000" />
+      <workItem from="1591180773452" duration="49000" />
+      <workItem from="1591180894671" duration="5000" />
+      <workItem from="1591181366340" duration="44000" />
+      <workItem from="1591181901075" duration="433000" />
+      <workItem from="1591186052645" duration="1680000" />
+      <workItem from="1591242459066" duration="2564000" />
+      <workItem from="1591271842127" duration="5443000" />
+      <workItem from="1591284661859" duration="85000" />
+      <workItem from="1591284832879" duration="329000" />
+      <workItem from="1591285188711" duration="234000" />
+      <workItem from="1591285425132" duration="1418000" />
+      <workItem from="1591287243652" duration="93000" />
+      <workItem from="1591287384922" duration="489000" />
+      <workItem from="1591287962535" duration="35000" />
     </task>
     <servers />
   </component>
@@ -907,38 +962,38 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="594" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1589536677455" />
-    <state width="1324" height="262" key="GridCell.Tab.0.bottom" timestamp="1591077106957">
+    <state width="1493" height="205" key="GridCell.Tab.0.bottom" timestamp="1591287874132">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1324" height="262" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1591077106957" />
-    <state width="1324" height="262" key="GridCell.Tab.0.center" timestamp="1591077106957">
+    <state width="1493" height="205" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1591287874132" />
+    <state width="1493" height="205" key="GridCell.Tab.0.center" timestamp="1591287874132">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1324" height="262" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1591077106957" />
-    <state width="1324" height="262" key="GridCell.Tab.0.left" timestamp="1591077106957">
+    <state width="1493" height="205" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1591287874132" />
+    <state width="1493" height="205" key="GridCell.Tab.0.left" timestamp="1591287874131">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1324" height="262" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1591077106957" />
-    <state width="1324" height="262" key="GridCell.Tab.0.right" timestamp="1591077106957">
+    <state width="1493" height="205" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1591287874131" />
+    <state width="1493" height="205" key="GridCell.Tab.0.right" timestamp="1591287874132">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1324" height="262" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1591077106957" />
-    <state width="1324" height="262" key="GridCell.Tab.1.bottom" timestamp="1591077106957">
+    <state width="1493" height="205" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1591287874132" />
+    <state width="1324" height="277" key="GridCell.Tab.1.bottom" timestamp="1591277681217">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1324" height="262" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1591077106957" />
-    <state width="1324" height="262" key="GridCell.Tab.1.center" timestamp="1591077106957">
+    <state width="1324" height="277" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1591277681217" />
+    <state width="1324" height="277" key="GridCell.Tab.1.center" timestamp="1591277681216">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1324" height="262" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1591077106957" />
-    <state width="1324" height="262" key="GridCell.Tab.1.left" timestamp="1591077106957">
+    <state width="1324" height="277" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1591277681216" />
+    <state width="1324" height="277" key="GridCell.Tab.1.left" timestamp="1591277681215">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1324" height="262" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1591077106957" />
-    <state width="1324" height="262" key="GridCell.Tab.1.right" timestamp="1591077106957">
+    <state width="1324" height="277" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1591277681215" />
+    <state width="1324" height="277" key="GridCell.Tab.1.right" timestamp="1591277681216">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1324" height="262" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1591077106957" />
+    <state width="1324" height="277" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1591277681216" />
     <state width="1321" height="260" key="GridCell.Tab.2.bottom" timestamp="1590769045970">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -955,10 +1010,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1321" height="260" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1590769045970" />
-    <state x="256" y="55" width="1006" height="722" key="SettingsEditor" timestamp="1591008879825">
+    <state x="258" y="48" width="1006" height="722" key="SettingsEditor" timestamp="1591277159866">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="256" y="55" width="1006" height="722" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1591008879825" />
+    <state x="258" y="48" width="1006" height="722" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1591277159866" />
     <state x="490" y="154" width="540" height="524" key="StructurePopup" timestamp="1590335802339">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -967,17 +1022,17 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="270" y="6" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1536.824@0.0.1536.824" timestamp="1590417188995" />
-    <state x="302" y="101" key="new project wizard" timestamp="1590929560328">
+    <state x="302" y="101" key="new project wizard" timestamp="1591189972237">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="302" y="101" key="new project wizard/0.0.1536.824@0.0.1536.824" timestamp="1590929560328" />
+    <state x="302" y="101" key="new project wizard/0.0.1536.824@0.0.1536.824" timestamp="1591189972237" />
     <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1590130511831">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1590130511831" />
-    <state x="409" y="95" key="spring file set editor" timestamp="1590930086423">
+    <state x="409" y="95" key="spring file set editor" timestamp="1591262254673">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="409" y="95" key="spring file set editor/0.0.1536.824@0.0.1536.824" timestamp="1590930086423" />
+    <state x="409" y="95" key="spring file set editor/0.0.1536.824@0.0.1536.824" timestamp="1591262254673" />
   </component>
 </project>

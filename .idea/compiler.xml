@@ -13,6 +13,7 @@
         <module name="pojo" />
         <module name="web_portal" />
         <module name="dao" />
+        <module name="solr_util" />
         <module name="web_manager" />
         <module name="common" />
       </profile>
@@ -35,6 +36,7 @@
       <module name="service_manager" options="" />
       <module name="service_sellerManagement" options="" />
       <module name="service_sellergoods" options="" />
+      <module name="solr_util" options="" />
       <module name="web_manager" options="" />
       <module name="web_portal" options="" />
       <module name="web_seller" options="" />

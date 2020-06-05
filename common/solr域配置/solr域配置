@@ -1,0 +1,6 @@
+根据项目业务的不同的搜索需求, 需要自定义一些域(Field)以供solr进行存储和添加索引;
+在服务器的solrhome中collection的conf文件夹下的schema.xml中进行配置;
+(/home/solrhome/collection1/conf/schema.xml)
+
+然后, 需要在相应的实体类(PoJo类)中的相应字段上, 加上SolrJ的@Field注解, 以标明需要进行存储和搜索的字段(存储在Solr中哪一个域里边);
+根据需要, @Field注解需要加上相应的Field名称, 与schema.xml中自定义的Field名称保持一致;
