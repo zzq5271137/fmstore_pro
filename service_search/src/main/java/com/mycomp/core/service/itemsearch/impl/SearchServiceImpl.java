@@ -5,12 +5,10 @@ import com.mycomp.core.dao.item.ItemDao;
 import com.mycomp.core.pojo.item.Item;
 import com.mycomp.core.service.itemsearch.SearchService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.data.solr.core.SolrTemplate;
-import org.springframework.data.solr.core.query.Criteria;
-import org.springframework.data.solr.core.query.HighlightOptions;
-import org.springframework.data.solr.core.query.SimpleHighlightQuery;
-import org.springframework.data.solr.core.query.result.HighlightEntry;
-import org.springframework.data.solr.core.query.result.HighlightPage;
+import org.springframework.data.solr.core.query.*;
+import org.springframework.data.solr.core.query.result.*;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
@@ -30,6 +28,20 @@ public class SearchServiceImpl implements SearchService {
 
     @Override
     public Map<String, Object> search(Map searchMap) {
+        // 1. 高亮查询Item
+        Map<String, Object> resultMap = queryWithHighLight(searchMap);
+
+        // 2. 查询分类
+        List<String> itemCatList = queryCategory(searchMap);
+        resultMap.put("itemCatList", itemCatList);
+
+        return resultMap;
+    }
+
+    /**
+     * 高亮查询Item
+     */
+    private Map<String, Object> queryWithHighLight(Map searchMap) {
         /*
          * 1. 解析搜索条件
          */
@@ -106,10 +118,51 @@ public class SearchServiceImpl implements SearchService {
          * 4. 封装结果集并返回
          */
         Map<String, Object> resultMap = new HashMap<>();
-        resultMap.put("rows", itemListRes);
+        resultMap.put("itemList", itemListRes);
         resultMap.put("total", items.getTotalElements());
         resultMap.put("totalPages", items.getTotalPages());
         return resultMap;
+    }
+
+    /**
+     * 查询分类
+     */
+    private List<String> queryCategory(Map searchMap) {
+        /*
+         * 1. 解析搜索条件
+         */
+        String keywords = String.valueOf(searchMap.get("keywords"));
+
+        /*
+         * 2. 设置查询
+         */
+        // 创建查询对象
+        SimpleQuery query = new SimpleQuery();
+        // 创建查询条件对象("item_keywords"为Solr服务器配置的复制域)
+        Criteria criteria = new Criteria("item_keywords").is(keywords);
+        query.addCriteria(criteria);
+        // 创建分组选项对象(因为里面可能有重复的分类, 类似于MySql的group by操作)
+        GroupOptions groupOptions = new GroupOptions();
+        groupOptions.addGroupByField("item_category");
+        // 将分组选项加入到查询对象中
+        query.setGroupOptions(groupOptions);
+
+        /*
+         * 3. 进行查询
+         */
+        // 定义结果集
+        List<String> itemCatListRes = new ArrayList<>();
+        // 向Solr服务器发送请求进行查询
+        GroupPage<Item> items = solrTemplate.queryForGroupPage(query, Item.class);
+        // 处理查询结果, 封装分组数据
+        GroupResult<Item> groupResult = items.getGroupResult("item_category");
+        Page<GroupEntry<Item>> groupEntries = groupResult.getGroupEntries();
+        groupEntries.forEach(itemGroupEntry -> itemCatListRes.add(itemGroupEntry.getGroupValue()));
+
+        /*
+         * 4. 返回结果集
+         */
+        return itemCatListRes;
     }
 
 }

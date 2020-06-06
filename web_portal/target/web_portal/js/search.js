@@ -7,9 +7,10 @@ new Vue({
             pageSize: 5,
         },
         resultMap: {
-            rows: [],
+            itemList: [],
             total: 0,
             totalPages: 0,
+            itemCatList: [],
         },
         pageLabel: [],
         firstDot: false,
