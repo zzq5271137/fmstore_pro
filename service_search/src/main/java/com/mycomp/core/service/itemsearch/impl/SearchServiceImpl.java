@@ -44,7 +44,7 @@ public class SearchServiceImpl implements SearchService {
         SimpleHighlightQuery query = new SimpleHighlightQuery();
         // 创建高亮选项对象
         HighlightOptions highlightOptions = new HighlightOptions();
-        // 设置哪个域需要高亮显示
+        // 设置哪个域需要高亮显示(这个要根据Solr服务器配置的"item_keywords"复制域进行设置)
         highlightOptions.addField("item_title");
         highlightOptions.addField("item_category");
         highlightOptions.addField("item_seller");
@@ -55,7 +55,7 @@ public class SearchServiceImpl implements SearchService {
         highlightOptions.setSimplePostfix("</em>");
         // 将高亮选项加入到查询对象中
         query.setHighlightOptions(highlightOptions);
-        // 创建查询条件对象
+        // 创建查询条件对象("item_keywords"为Solr服务器配置的复制域)
         Criteria criteria = new Criteria("item_keywords").is(keywords);
         query.addCriteria(criteria);
         // 设置分页
@@ -81,7 +81,7 @@ public class SearchServiceImpl implements SearchService {
             if (highlights != null && highlights.size() > 0) {
                 highlights.forEach(highlight -> {
                     String highLightContent = highlight.getSnipplets().get(0);
-                    // 根据字段名称替换高亮内容
+                    // 根据字段名称替换高亮内容(这个要根据上面设置的哪个域需要高亮显示进行判断)
                     switch (highlight.getField().getName()) {
                         case "item_title":
                             item.setTitle(highLightContent);

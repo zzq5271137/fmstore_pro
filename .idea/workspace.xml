@@ -7,43 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3ac7d70b-d1cf-48c5-b158-f47fe452bd9c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/interface/src/main/java/com/mycomp/core/service/itemsearch/SearchService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service_search/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service_search/src/main/java/com/mycomp/core/service/itemsearch/impl/SearchServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service_search/src/main/resources/log4j.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service_search/src/main/resources/spring/applicationContext-service.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service_search/src/main/resources/spring/applicationContext-solr.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service_search/src/main/resources/spring/applicationContext-tx.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service_search/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service_search/src/main/webapp/index.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web_portal/src/main/java/com/mycomp/core/controller/portal/SearchController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web_portal/src/main/webapp/js/search.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service_sellergoods/target/service_sellergoods/WEB-INF/lib/common-1.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/service_sellergoods/target/service_sellergoods/WEB-INF/lib/common-1.0.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service_sellergoods/target/service_sellergoods/WEB-INF/lib/dao-1.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/service_sellergoods/target/service_sellergoods/WEB-INF/lib/dao-1.0.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service_sellergoods/target/service_sellergoods/WEB-INF/lib/interface-1.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/service_sellergoods/target/service_sellergoods/WEB-INF/lib/interface-1.0.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/solr_util/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/solr_util/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_manager/target/web_manager/WEB-INF/lib/common-1.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/web_manager/target/web_manager/WEB-INF/lib/common-1.0.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_manager/target/web_manager/WEB-INF/lib/interface-1.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/web_manager/target/web_manager/WEB-INF/lib/interface-1.0.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_portal/src/main/webapp/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/web_portal/src/main/webapp/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_portal/src/main/webapp/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/web_portal/src/main/webapp/js/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_portal/src/main/webapp/search.html" beforeDir="false" afterPath="$PROJECT_DIR$/web_portal/src/main/webapp/search.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_portal/target/web_portal/WEB-INF/lib/common-1.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/web_portal/target/web_portal/WEB-INF/lib/common-1.0.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_portal/target/web_portal/WEB-INF/lib/commons-collections-3.1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_portal/target/web_portal/WEB-INF/lib/interface-1.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/web_portal/target/web_portal/WEB-INF/lib/interface-1.0.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_portal/target/web_portal/WEB-INF/lib/pojo-1.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/web_portal/target/web_portal/WEB-INF/lib/pojo-1.0.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_portal/target/web_portal/WEB-INF/lib/spring-data-commons-1.12.2.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_portal/target/web_portal/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/web_portal/target/web_portal/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_portal/target/web_portal/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/web_portal/target/web_portal/js/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_portal/target/web_portal/search.html" beforeDir="false" afterPath="$PROJECT_DIR$/web_portal/target/web_portal/search.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_shop/target/classes/spring/spring-security.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web_shop/target/classes/spring/spring-security.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_shop/target/classes/spring/springmvc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web_shop/target/classes/spring/springmvc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_shop/target/web_shop/WEB-INF/classes/spring/spring-security.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web_shop/target/web_shop/WEB-INF/classes/spring/spring-security.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_shop/target/web_shop/WEB-INF/classes/spring/springmvc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web_shop/target/web_shop/WEB-INF/classes/spring/springmvc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_shop/target/web_shop/WEB-INF/lib/common-1.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/web_shop/target/web_shop/WEB-INF/lib/common-1.0.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_shop/target/web_shop/WEB-INF/lib/commons-collections-3.1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_shop/target/web_shop/WEB-INF/lib/interface-1.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/web_shop/target/web_shop/WEB-INF/lib/interface-1.0.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_shop/target/web_shop/WEB-INF/lib/pojo-1.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/web_shop/target/web_shop/WEB-INF/lib/pojo-1.0.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service_search/src/main/java/com/mycomp/core/service/itemsearch/impl/SearchServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/service_search/src/main/java/com/mycomp/core/service/itemsearch/impl/SearchServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -1058,7 +1022,7 @@
       <workItem from="1591287384922" duration="489000" />
       <workItem from="1591287962535" duration="35000" />
       <workItem from="1591329849553" duration="15697000" />
-      <workItem from="1591407080085" duration="8589000" />
+      <workItem from="1591407080085" duration="8814000" />
     </task>
     <servers />
   </component>
