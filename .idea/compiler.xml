@@ -9,10 +9,11 @@
         <outputRelativeToContentRoot value="true" />
         <module name="service_sellergoods" />
         <module name="interface" />
-        <module name="web_shop" />
-        <module name="pojo" />
-        <module name="web_portal" />
         <module name="dao" />
+        <module name="web_shop" />
+        <module name="service_search" />
+        <module name="web_portal" />
+        <module name="pojo" />
         <module name="solr_util" />
         <module name="web_manager" />
         <module name="common" />
@@ -34,6 +35,7 @@
       <module name="interface" options="" />
       <module name="pojo" options="" />
       <module name="service_manager" options="" />
+      <module name="service_search" options="" />
       <module name="service_sellerManagement" options="" />
       <module name="service_sellergoods" options="" />
       <module name="solr_util" options="" />

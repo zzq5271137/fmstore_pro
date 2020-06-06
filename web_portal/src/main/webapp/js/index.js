@@ -2,6 +2,7 @@ new Vue({
     el: '#app',
     data: {
         contentList: [],
+        searchContent: '',
     },
     created: function () {
         this.getContentByCategoryId(1);  // 1: 首页轮播广告(数据库中)
@@ -25,5 +26,9 @@ new Vue({
                 console.log(reason);
             });
         },
+        searchItem: function () {
+            window.location.href = '/search.html?sc=' + this.searchContent;
+            window.event.returnValue = false;
+        }
     }
 });

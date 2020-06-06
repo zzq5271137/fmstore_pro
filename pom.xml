@@ -17,6 +17,7 @@
         <module>solr_util</module>
         <module>interface</module>
         <module>service_sellergoods</module>
+        <module>service_search</module>
         <module>web_manager</module>
         <module>web_shop</module>
         <module>web_portal</module>
