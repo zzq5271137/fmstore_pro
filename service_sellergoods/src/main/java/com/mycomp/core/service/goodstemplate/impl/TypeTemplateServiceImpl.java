@@ -4,7 +4,6 @@ import com.alibaba.dubbo.config.annotation.Service;
 import com.alibaba.fastjson.JSON;
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
-import com.mycomp.core.dao.specification.SpecificationDao;
 import com.mycomp.core.dao.specification.SpecificationOptionDao;
 import com.mycomp.core.dao.template.TypeTemplateDao;
 import com.mycomp.core.pojo.queryentity.PageResult;
@@ -13,7 +12,9 @@ import com.mycomp.core.pojo.specification.SpecificationOptionQuery;
 import com.mycomp.core.pojo.template.TypeTemplate;
 import com.mycomp.core.pojo.template.TypeTemplateQuery;
 import com.mycomp.core.service.goodstemplate.TypeTemplateService;
+import com.mycomp.utils.RedisKeys;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Arrays;
@@ -29,10 +30,10 @@ public class TypeTemplateServiceImpl implements TypeTemplateService {
     private TypeTemplateDao typeTemplateDao;
 
     @Autowired
-    private SpecificationDao specDao;
+    private SpecificationOptionDao specOptDao;
 
     @Autowired
-    private SpecificationOptionDao specOptDao;
+    private RedisTemplate<String, Object> redisTemplate;
 
     /**
      * 分页查找TypeTemplate数据
@@ -64,6 +65,10 @@ public class TypeTemplateServiceImpl implements TypeTemplateService {
      */
     @Override
     public void addTemplate(TypeTemplate typeTemplate) {
+        // 清除Redis中的相关数据
+        redisTemplate.delete(RedisKeys.BRAND_LIST_REDIS);
+        redisTemplate.delete(RedisKeys.SPEC_LIST_REDIS);
+
         typeTemplateDao.insertSelective(typeTemplate);
     }
 
@@ -85,6 +90,10 @@ public class TypeTemplateServiceImpl implements TypeTemplateService {
      */
     @Override
     public void updateTemplate(TypeTemplate typeTemplate) {
+        // 清除Redis中的相关数据
+        redisTemplate.delete(RedisKeys.BRAND_LIST_REDIS);
+        redisTemplate.delete(RedisKeys.SPEC_LIST_REDIS);
+
         typeTemplateDao.updateByPrimaryKeySelective(typeTemplate);
     }
 
@@ -95,6 +104,10 @@ public class TypeTemplateServiceImpl implements TypeTemplateService {
      */
     @Override
     public void deleteTemplate(Long[] targetIds) {
+        // 清除Redis中的相关数据
+        redisTemplate.delete(RedisKeys.BRAND_LIST_REDIS);
+        redisTemplate.delete(RedisKeys.SPEC_LIST_REDIS);
+
         TypeTemplateQuery typeTemplateQuery = new TypeTemplateQuery();
         TypeTemplateQuery.Criteria criteria = typeTemplateQuery.createCriteria();
         criteria.andIdIn(Arrays.asList(targetIds));

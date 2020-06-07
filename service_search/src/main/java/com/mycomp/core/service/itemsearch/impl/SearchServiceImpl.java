@@ -1,11 +1,20 @@
 package com.mycomp.core.service.itemsearch.impl;
 
 import com.alibaba.dubbo.config.annotation.Service;
-import com.mycomp.core.dao.item.ItemDao;
+import com.alibaba.fastjson.JSON;
+import com.mycomp.core.dao.item.ItemCatDao;
+import com.mycomp.core.dao.specification.SpecificationOptionDao;
+import com.mycomp.core.dao.template.TypeTemplateDao;
 import com.mycomp.core.pojo.item.Item;
+import com.mycomp.core.pojo.item.ItemCat;
+import com.mycomp.core.pojo.specification.SpecificationOption;
+import com.mycomp.core.pojo.specification.SpecificationOptionQuery;
+import com.mycomp.core.pojo.template.TypeTemplate;
 import com.mycomp.core.service.itemsearch.SearchService;
+import com.mycomp.utils.RedisKeys;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.solr.core.SolrTemplate;
 import org.springframework.data.solr.core.query.*;
 import org.springframework.data.solr.core.query.result.*;
@@ -15,6 +24,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 @Service
 @Transactional
@@ -24,16 +34,61 @@ public class SearchServiceImpl implements SearchService {
     private SolrTemplate solrTemplate;
 
     @Autowired
-    private ItemDao itemDao;
+    private RedisTemplate<String, Object> redisTemplate;
+
+    @Autowired
+    private ItemCatDao itemCatDao;
+
+    @Autowired
+    private TypeTemplateDao typeTemplateDao;
+
+    @Autowired
+    private SpecificationOptionDao specOptDao;
 
     @Override
     public Map<String, Object> search(Map searchMap) {
-        // 1. 高亮查询Item
+        /*
+         * 0. 首次访问时, 将相应的数据存入Redis中, 以便之后的访问
+         */
+        if (!redisTemplate.hasKey(RedisKeys.CATEGORY_LIST_REDIS)) {
+            // 缓存分类信息到Redis中, 以分类名称为key, 以typeId为value
+            loadCategoryDataToRedis();
+        }
+        if (!redisTemplate.hasKey(RedisKeys.BRAND_LIST_REDIS)) {
+            // 缓存品牌信息到Redis中, 以typeId为key, 以品牌数据为value
+            loadBrandDataToRedis();
+        }
+        if (!redisTemplate.hasKey(RedisKeys.SPEC_LIST_REDIS)) {
+            // 缓存规格信息到Redis中, 以typeId为key, 以规格数据为value
+            loadSpecDataToRedis();
+        }
+
+        /*
+         * 1. 高亮查询Item
+         */
         Map<String, Object> resultMap = queryWithHighLight(searchMap);
 
-        // 2. 查询分类
+        /*
+         * 2. 查询分类
+         */
         List<String> itemCatList = queryCategory(searchMap);
         resultMap.put("itemCatList", itemCatList);
+
+        /*
+         * 3. 根据分类名称查询相应的品牌和规格
+         */
+        Map<String, Object> brandAndSpecMap;
+        String categoryName = String.valueOf(searchMap.get("category"));
+        if (categoryName != null && !categoryName.equals("")) {
+            // 情况一. searchMap查询条件中有分类的条件, 直接使用分类的条件
+            brandAndSpecMap = quertBrandAndSpecWithCategoryName(categoryName);
+        } else {
+            // 情况二. searchMap查询条件中没有分类的条件, 从上面查出的所有分类中取出第一个进行查询
+            assert itemCatList.size() > 0;
+            brandAndSpecMap = quertBrandAndSpecWithCategoryName(itemCatList.get(0));
+        }
+        assert brandAndSpecMap != null;
+        resultMap.putAll(brandAndSpecMap);
 
         return resultMap;
     }
@@ -163,6 +218,88 @@ public class SearchServiceImpl implements SearchService {
          * 4. 返回结果集
          */
         return itemCatListRes;
+    }
+
+    /**
+     * 根据分类名称查询相应的品牌和规格(从Redis中查询)
+     */
+    private Map<String, Object> quertBrandAndSpecWithCategoryName(String categoryName) {
+        // 1. 根据分类名称, 取得typeId
+        Long typeId = (Long) redisTemplate.boundHashOps(RedisKeys.CATEGORY_LIST_REDIS).get(categoryName);
+
+        if (typeId != null) {
+            // 2. 根据typeId, 取得品牌数据
+            List<Map> brandList = (List<Map>) redisTemplate.boundHashOps(RedisKeys.BRAND_LIST_REDIS).get(typeId);
+
+            // 3. 根据typeId, 取得规格数据
+            List<Map> specList = (List<Map>) redisTemplate.boundHashOps(RedisKeys.SPEC_LIST_REDIS).get(typeId);
+
+            // 4. 封装结果并返回
+            Map<String, Object> res = new HashMap<>();
+            res.put("brandList", brandList);
+            res.put("specList", specList);
+            return res;
+        }
+        return null;
+    }
+
+    /**
+     * 缓存分类信息到Redis中, 以分类名称为key, 以typeId为value
+     */
+    private void loadCategoryDataToRedis() {
+        List<ItemCat> allItemCats = itemCatDao.selectByExample(null);
+        allItemCats.forEach(itemCat ->
+                redisTemplate.boundHashOps(RedisKeys.CATEGORY_LIST_REDIS).put(itemCat.getName(), itemCat.getTypeId()));
+    }
+
+    /**
+     * 缓存品牌信息到Redis中, 以typeId为key, 以品牌数据为value
+     */
+    private void loadBrandDataToRedis() {
+        List<TypeTemplate> allTypeTemplates = typeTemplateDao.selectByExample(null);
+        allTypeTemplates.forEach(typeTemplate -> {
+            String brandsStr = typeTemplate.getBrandIds();
+            List<Map> brandsList = JSON.parseArray(brandsStr, Map.class);
+            redisTemplate.boundHashOps(RedisKeys.BRAND_LIST_REDIS).put(typeTemplate.getId(), brandsList);
+        });
+    }
+
+    /**
+     * 缓存规格信息到Redis中, 以typeId为key, 以规格数据为value
+     */
+    private void loadSpecDataToRedis() {
+        List<TypeTemplate> allTypeTemplates = typeTemplateDao.selectByExample(null);
+        allTypeTemplates.forEach(typeTemplate -> {
+            List<Map> specsList = getSpecByTemplateId(typeTemplate.getId());
+            redisTemplate.boundHashOps(RedisKeys.SPEC_LIST_REDIS).put(typeTemplate.getId(), specsList);
+        });
+    }
+
+    /**
+     * 根据模板id查询出模板, 再进一步查询出规格和规格选项
+     */
+    private List<Map> getSpecByTemplateId(Long id) {
+        // 1. 根据id查询出模板
+        TypeTemplate typeTemplate = typeTemplateDao.selectByPrimaryKey(id);
+        // 2. 根据模板中的数据查询出规格
+        if (typeTemplate != null) {
+            String specs = typeTemplate.getSpecIds();
+            List<Map> specList = JSON.parseArray(specs, Map.class);
+            specList = specList.stream().map(spec -> {
+                // 3. 根据规格的id查询出相应的规格选项
+                Object specId = spec.get("id");
+                Long specIdLong = Long.parseLong(String.valueOf(specId));
+                SpecificationOptionQuery specOptQuery = new SpecificationOptionQuery();
+                SpecificationOptionQuery.Criteria criteria = specOptQuery.createCriteria();
+                criteria.andSpecIdEqualTo(specIdLong);
+                List<SpecificationOption> specOptList = specOptDao.selectByExample(specOptQuery);
+                // 4. 将查询出的规格选项添加进Map(一个Map就是一个规格)
+                spec.put("options", specOptList);
+                return spec;
+            }).collect(Collectors.toList());
+            return specList;
+        }
+        return null;
     }
 
 }

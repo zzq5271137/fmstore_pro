@@ -6,7 +6,16 @@ package com.mycomp.utils;
 
 public interface RedisKeys {
 
-    // 广告列表相关业务
+    // 广告列表
     String CONTENT_LIST_REDIS = "contentList";
+
+    // 分类列表
+    String CATEGORY_LIST_REDIS = "categoryList";
+
+    // 品牌列表
+    String BRAND_LIST_REDIS = "brandList";
+
+    // 规格列表
+    String SPEC_LIST_REDIS = "specList";
 
 }

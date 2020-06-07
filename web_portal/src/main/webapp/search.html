@@ -138,86 +138,22 @@
                     </div>
                     <div class="fl ext"></div>
                 </div>
-                <div class="type-wrap logo">
-                    <div class="fl key brand">品牌</div>
-                    <div class="value logos">
-                        <ul class="logo-list">
-                            <li><img src="img/b1.jpg"/></li>
-                            <li><img src="img/b2.jpg"/></li>
-                            <li><img src="img/b3.jpg"/></li>
-                            <li><img src="img/b4.jpg"/></li>
-                            <li><img src="img/b5.jpg"/></li>
-                            <li><img src="img/b6.jpg"/></li>
-                            <li><img src="img/b7.jpg"/></li>
-                            <li><img src="img/b8.jpg"/></li>
-                            <li><img src="img/b9.jpg"/></li>
-                            <li><img src="img/b10.jpg"/></li>
-                            <li><img src="img/b11.jpg"/></li>
-                            <li><img src="img/b12.jpg"/></li>
-                            <li><img src="img/b14.jpg"/></li>
-                            <li><img src="img/b13.jpg"/></li>
-                            <li><img src="img/b19.jpg"/></li>
-                            <li><img src="img/b16.jpg"/></li>
-                            <li><img src="img/b17.jpg"/></li>
-                            <li><img src="img/b18.jpg"/></li>
+                <div class="type-wrap">
+                    <div class="fl key">品牌</div>
+                    <div class="fl value">
+                        <ul class="type-list">
+                            <li v-for="brand in resultMap.brandList">
+                                <a href="#">{{ brand.name }}</a>
+                            </li>
                         </ul>
                     </div>
                 </div>
-                <div class="type-wrap">
-                    <div class="fl key">分辨率：</div>
+                <div class="type-wrap" v-for="spec in resultMap.specList">
+                    <div class="fl key">{{ spec.spec_name }}</div>
                     <div class="fl value">
                         <ul class="type-list">
-                            <li>
-                                <a href="#">标清SD</a>
-                            </li>
-                            <li>
-                                <a>标清SD全高清FHD+</a>
-                            </li>
-                            <li>
-                                <a>高清HD</a>
-                            </li>
-                            <li>
-                                <a>+及以上</a>
-                            </li>
-                            <li>
-                                <a>其它分辨率</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="fl ext"></div>
-                </div>
-                <div class="type-wrap">
-                    <div class="fl key">显示屏尺寸</div>
-                    <div class="fl value">
-                        <ul class="type-list">
-                            <li>
-                                <a>4.0-4.9英寸</a>
-                            </li>
-                            <li>
-                                <a>4.0-4.9英寸</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="fl ext"></div>
-                </div>
-                <div class="type-wrap">
-                    <div class="fl key">摄像头像素</div>
-                    <div class="fl value">
-                        <ul class="type-list">
-                            <li>
-                                <a>1200万以上</a>
-                            </li>
-                            <li>
-                                <a>800-1199万</a>
-                            </li>
-                            <li>
-                                <a>1200-1599万</a>
-                            </li>
-                            <li>
-                                <a>1600万以上</a>
-                            </li>
-                            <li>
-                                <a>无摄像头</a>
+                            <li v-for="option in spec.options">
+                                <a href="#">{{ option.optionName }}</a>
                             </li>
                         </ul>
                     </div>
@@ -244,30 +180,6 @@
                             </li>
                             <li>
                                 <a>3000元以上</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="fl ext">
-                    </div>
-                </div>
-                <div class="type-wrap">
-                    <div class="fl key">更多筛选项</div>
-                    <div class="fl value">
-                        <ul class="type-list">
-                            <li>
-                                <a>特点</a>
-                            </li>
-                            <li>
-                                <a>系统</a>
-                            </li>
-                            <li>
-                                <a>手机内存 </a>
-                            </li>
-                            <li>
-                                <a>单卡双卡</a>
-                            </li>
-                            <li>
-                                <a>其他</a>
                             </li>
                         </ul>
                     </div>
