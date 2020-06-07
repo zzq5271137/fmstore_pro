@@ -1,8 +1,11 @@
 package com.mycomp.core.service.goodstemplate;
 
 import com.mycomp.core.pojo.good.Goods;
+import com.mycomp.core.pojo.item.Item;
 import com.mycomp.core.pojo.queryentity.GoodsEntity;
 import com.mycomp.core.pojo.queryentity.PageResult;
+
+import java.util.List;
 
 public interface GoodsService {
 
@@ -17,5 +20,7 @@ public interface GoodsService {
     void deleteGoods(Long[] targetIds);
 
     void updateStatus(Long[] targetIds, String status);
+
+    List<Item> getItemsByGoodsIds(Long[] goodsIds, String status);
 
 }

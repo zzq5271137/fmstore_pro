@@ -6,11 +6,14 @@ import com.mycomp.core.pojo.queryentity.GoodsEntity;
 import com.mycomp.core.pojo.queryentity.PageResult;
 import com.mycomp.core.pojo.queryentity.RestResult;
 import com.mycomp.core.service.goodstemplate.GoodsService;
+import com.mycomp.core.service.itemsearch.SolrManagementService;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.Arrays;
 
 @RestController
 @RequestMapping("/goods")
@@ -18,6 +21,9 @@ public class GoodsController {
 
     @Reference
     private GoodsService goodsService;
+
+    @Reference
+    private SolrManagementService solrManagementService;
 
     @RequestMapping("/addGoods")
     public RestResult addGoods(@RequestBody GoodsEntity goodsEntity) {
@@ -62,6 +68,8 @@ public class GoodsController {
     @RequestMapping("/deleteGoods")
     public RestResult deleteGoods(@RequestParam("targetIds") Long[] targetIds) {
         try {
+            // 删除Solr搜索服务器中的相关数据
+            solrManagementService.deleteItemsFromSolr(Arrays.asList(targetIds));
             goodsService.deleteGoods(targetIds);
             return new RestResult(true, "商品删除成功！");
         } catch (Exception e) {
