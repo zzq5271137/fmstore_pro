@@ -20,10 +20,7 @@ import org.springframework.data.solr.core.query.*;
 import org.springframework.data.solr.core.query.result.*;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 
 @Service
@@ -103,12 +100,80 @@ public class SearchServiceImpl implements SearchService {
         String keywords = String.valueOf(searchMap.get("keywords"));
         Integer page = Integer.parseInt(String.valueOf(searchMap.get("page")));
         Integer pageSize = Integer.parseInt(String.valueOf(searchMap.get("pageSize")));
+        String category = String.valueOf(searchMap.get("category"));
+        String brand = String.valueOf(searchMap.get("brand"));
+        String spec = String.valueOf(searchMap.get("spec"));
+        String price = String.valueOf(searchMap.get("price"));
 
         /*
          * 2. 设置查询
          */
         // 创建高亮查询对象
         SimpleHighlightQuery query = new SimpleHighlightQuery();
+        if (category != null && !"".equals(category)) {  // 根据分类过滤查询
+            // 创建过滤查询对象
+            FilterQuery filterQuery = new SimpleFilterQuery();
+            // 创建条件对象
+            Criteria filterCriteria = new Criteria("item_category").is(category);
+            // 将条件对象放入过滤对象中
+            filterQuery.addCriteria(filterCriteria);
+            // 将过滤对象放入查询对象中
+            query.addFilterQuery(filterQuery);
+        }
+        if (brand != null && !"".equals(brand)) {  // 根据品牌过滤查询
+            // 创建过滤查询对象
+            FilterQuery filterQuery = new SimpleFilterQuery();
+            // 创建条件对象
+            Criteria filterCriteria = new Criteria("item_brand").is(brand);
+            // 将条件对象放入过滤对象中
+            filterQuery.addCriteria(filterCriteria);
+            // 将过滤对象放入查询对象中
+            query.addFilterQuery(filterQuery);
+        }
+        if (spec != null && !"".equals(spec)) {  // 根据规格过滤查询, spec的数据格式如: {网络: 移动4G, 内存小大: 16G}
+            Map<String, String> specMap = JSON.parseObject(spec, Map.class);
+            if (specMap != null && specMap.size() > 0) {
+                Set<Map.Entry<String, String>> specEntries = specMap.entrySet();
+                for (Map.Entry<String, String> specEntry : specEntries) {
+                    // 创建过滤查询对象
+                    FilterQuery filterQuery = new SimpleFilterQuery();
+                    // 创建条件对象
+                    Criteria filterCriteria = new Criteria("item_spec_" + specEntry.getKey()).is(specEntry.getValue());
+                    // 将条件对象放入过滤对象中
+                    filterQuery.addCriteria(filterCriteria);
+                    // 将过滤对象放入查询对象中
+                    query.addFilterQuery(filterQuery);
+                }
+            }
+        }
+        if (price != null && !"".equals(price)) {  // 根据价格过滤, price的数据格式如: 0-500、500-1000、1000-1500...3000-*
+            // 切分价格, 取得最大值max和最小值min
+            String[] priceRegion = price.split("-");
+            if (priceRegion != null && priceRegion.length == 2) {
+                String min = priceRegion[0];
+                String max = priceRegion[1];
+                if (!"0".equals(min)) {  // 进入到这里, 说明需要设置大于等于min, 如果min为0, 不设置
+                    // 创建过滤查询对象
+                    FilterQuery filterQuery = new SimpleFilterQuery();
+                    // 创建条件对象
+                    Criteria filterCriteria = new Criteria("item_price").greaterThanEqual(min);
+                    // 将条件对象放入过滤对象中
+                    filterQuery.addCriteria(filterCriteria);
+                    // 将过滤对象放入查询对象中
+                    query.addFilterQuery(filterQuery);
+                }
+                if (!"*".equals(max)) {  // 进入到这里, 说明需要设置小于等于max, 如果max为*, 不设置
+                    // 创建过滤查询对象
+                    FilterQuery filterQuery = new SimpleFilterQuery();
+                    // 创建条件对象
+                    Criteria filterCriteria = new Criteria("item_price").lessThanEqual(max);
+                    // 将条件对象放入过滤对象中
+                    filterQuery.addCriteria(filterCriteria);
+                    // 将过滤对象放入查询对象中
+                    query.addFilterQuery(filterQuery);
+                }
+            }
+        }
         // 创建高亮选项对象
         HighlightOptions highlightOptions = new HighlightOptions();
         // 设置哪个域需要高亮显示(这个要根据Solr服务器配置的"item_keywords"复制域进行设置)
@@ -141,10 +206,10 @@ public class SearchServiceImpl implements SearchService {
         // 向Solr服务器发送请求进行查询
         HighlightPage<Item> items = solrTemplate.queryForHighlightPage(query, Item.class);
         // 处理查询结果, 替换高亮字段
-        List<HighlightEntry<Item>> highlighted = items.getHighlighted();
-        highlighted.forEach(itemHighlightEntry -> {
-            Item item = itemHighlightEntry.getEntity();  // 原始数据(没有添加高亮的数据)
-            List<HighlightEntry.Highlight> highlights = itemHighlightEntry.getHighlights();
+        List<HighlightEntry<Item>> highlightedItemEntries = items.getHighlighted();
+        highlightedItemEntries.forEach(highlightItemEntry -> {
+            Item item = highlightItemEntry.getEntity();  // 原始数据(没有添加高亮的数据)
+            List<HighlightEntry.Highlight> highlights = highlightItemEntry.getHighlights();
             if (highlights != null && highlights.size() > 0) {
                 highlights.forEach(highlight -> {
                     String highLightContent = highlight.getSnipplets().get(0);

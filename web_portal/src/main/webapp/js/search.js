@@ -6,6 +6,9 @@ new Vue({
             page: 1,
             pageSize: 5,
             category: '',
+            brand: '',
+            price: '',
+            spec: {}
         },
         resultMap: {
             itemList: [],
@@ -18,10 +21,6 @@ new Vue({
         pageLabel: [],
         firstDot: false,
         lastDot: false,
-    },
-    watch: {},
-    created: function () {
-
     },
     mounted: function () {
         this.searchMap.keywords = this.getQueryString("sc");
@@ -90,6 +89,32 @@ new Vue({
         },
         isLastPage: function () {
             return this.searchMap.page === this.resultMap.totalPages;
+        },
+        addSearchCondition: function (key, value) {
+            if (key === 'category') {
+                this.searchMap.category = value;
+                this.searchMap.brand = '';
+                this.searchMap.price = '';
+                this.searchMap.spec = {};
+            } else if (key === 'brand' || key === 'price') {
+                this.searchMap[key] = value;
+            } else {
+                Vue.set(this.searchMap.spec, key, value);
+            }
+            this.searchItems();
+        },
+        removeSearchCondition: function (key) {
+            if (key === 'category') {
+                this.searchMap.category = '';
+                this.searchMap.brand = '';
+                this.searchMap.price = '';
+                this.searchMap.spec = {};
+            } else if (key === 'brand' || key === 'price') {
+                this.searchMap[key] = "";
+            } else {
+                Vue.delete(this.searchMap.spec, key);
+            }
+            this.searchItems();
         },
     },
 });
