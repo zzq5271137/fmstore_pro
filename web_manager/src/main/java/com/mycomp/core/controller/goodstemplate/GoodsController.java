@@ -60,7 +60,6 @@ public class GoodsController {
             }
             return new RestResult(true, "商品状态修改成功！");
         } catch (Exception e) {
-            goodsService.updateStatus(targetIds, "0");
             return new RestResult(false, "商品状态修改失败...");
         }
     }
