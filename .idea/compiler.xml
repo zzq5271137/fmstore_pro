@@ -11,12 +11,13 @@
         <module name="interface" />
         <module name="web_shop" />
         <module name="service_search" />
+        <module name="pojo" />
+        <module name="service_page" />
         <module name="web_portal" />
         <module name="dao" />
-        <module name="common" />
         <module name="solr_util" />
         <module name="web_manager" />
-        <module name="pojo" />
+        <module name="common" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -35,6 +36,7 @@
       <module name="interface" options="" />
       <module name="pojo" options="" />
       <module name="service_manager" options="" />
+      <module name="service_page" options="" />
       <module name="service_search" options="" />
       <module name="service_sellerManagement" options="" />
       <module name="service_sellergoods" options="" />

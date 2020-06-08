@@ -35,6 +35,11 @@ new Vue({
         },
 
         getGoodsPage: function (page) {
+            if (this.goodsSearch.auditStatus === "-1") {
+                this.goodsSearch.isDelete = "1";
+            } else {
+                this.goodsSearch.isDelete = "";
+            }
             this.page = page;
             let _this = this;
             axios.post('/goods/getGoodsPage.do?page=' + this.page + '&pageSize=' + this.pageSize,
@@ -72,6 +77,33 @@ new Vue({
                 .then(function (response) {
                     if (response.data.success) {
                         alert(response.data.message);
+                        _this.getGoodsPage(1);
+                    } else {
+                        alert(response.data.message);
+                    }
+                });
+            this.goodsSelected = [];
+            this.selectStates = {};
+        },
+
+        isDelete: function (isDelete) {
+            if (isDelete === "1") {
+                return '是';
+            }
+            return '否';
+        },
+
+        deleteGoodsFromDB: function () {
+            if (this.goodsSelected.length === 0) {
+                return;
+            }
+            let targetIds = Qs.stringify({targetIds: this.goodsSelected}, {indices: false});
+            let _this = this;
+            axios.post('/goods/deleteGoodsFromDB.do?' + targetIds)
+                .then(function (response) {
+                    if (response.data.success) {
+                        alert(response.data.message);
+                        this.goodsSearch = {};
                         _this.getGoodsPage(1);
                     } else {
                         alert(response.data.message);

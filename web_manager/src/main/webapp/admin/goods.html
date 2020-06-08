@@ -38,6 +38,10 @@
                                 @click="updateStatus('3')">
                             <i class="fa fa-ban"></i> 驳回
                         </button>
+                        <button type="button" class="btn btn-default" title="驳回"
+                                @click="deleteGoodsFromDB">
+                            <i class="fa fa-ban"></i> 删除
+                        </button>
                         <button type="button" class="btn btn-default" title="刷新"
                                 onclick="window.location.reload();">
                             <i class="fa fa-refresh"></i> 刷新
@@ -58,6 +62,7 @@
                             <option value="1">申请中</option>
                             <option value="2">审核通过</option>
                             <option value="3">已驳回</option>
+                            <option value="-1">已由商家删除</option>
                         </select>
                         商品名称：<input type="text" class="form-control"
                                     v-model="goodsSearch.goodsName"
@@ -81,6 +86,7 @@
                     <th class="sorting">二级分类</th>
                     <th class="sorting">三级分类</th>
                     <th class="sorting">状态</th>
+                    <th class="sorting">是否已由商家删除</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -99,6 +105,7 @@
                     <td>
                         <span>{{ auditStatuses[goodsItem.auditStatus] }}</span>
                     </td>
+                    <td>{{ isDelete(goodsItem.isDelete) }}</td>
                 </tr>
                 </tbody>
             </table>

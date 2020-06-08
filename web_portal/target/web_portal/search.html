@@ -116,7 +116,6 @@
                     <li>
                         <a onclick="window.location.reload()" style="cursor: pointer">全部结果</a>
                     </li>
-
                 </ul>
                 <ul class="tags-choose">
                     <li class="tag" v-if="searchMap.category != null && searchMap.category != ''">
@@ -140,12 +139,6 @@
                     </li>
                     搜索结果：{{ resultMap.total }}条
                 </ul>
-                <!--                <form class="fl sui-form form-dark">-->
-                <!--                    <div class="input-control control-right">-->
-                <!--                        <input type="text"/>-->
-                <!--                        <i class="sui-icon icon-touch-magnifier"></i>-->
-                <!--                    </div>-->
-                <!--                </form>-->
                 <div class="clearfix"></div>
             </div>
             <!-- 规格 -->
@@ -269,7 +262,10 @@
                         <li class="yui3-u-1-5" v-for="item in resultMap.itemList">
                             <div class="list-wrap">
                                 <div class="p-img">
-                                    <a href="#"><img :src="item.image"/></a>
+                                    <a @click="openDetailPage(item.goodsId)"
+                                       style="cursor: pointer">
+                                        <img :src="item.image"/>
+                                    </a>
                                 </div>
                                 <div class="price">
                                     <strong>

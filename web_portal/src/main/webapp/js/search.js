@@ -116,5 +116,8 @@ new Vue({
             }
             this.searchItems();
         },
+        openDetailPage: function (goodsId) {
+            window.open("http://localhost:8086/" + goodsId + ".html");
+        }
     },
 });

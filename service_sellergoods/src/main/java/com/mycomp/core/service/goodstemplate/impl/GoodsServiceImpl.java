@@ -12,11 +12,13 @@ import com.mycomp.core.dao.item.ItemDao;
 import com.mycomp.core.dao.seller.SellerDao;
 import com.mycomp.core.pojo.good.Goods;
 import com.mycomp.core.pojo.good.GoodsDesc;
+import com.mycomp.core.pojo.good.GoodsDescQuery;
 import com.mycomp.core.pojo.good.GoodsQuery;
 import com.mycomp.core.pojo.item.Item;
 import com.mycomp.core.pojo.item.ItemQuery;
 import com.mycomp.core.pojo.queryentity.GoodsEntity;
 import com.mycomp.core.pojo.queryentity.PageResult;
+import com.mycomp.core.service.exceptions.DeleteGoodsFromDBException;
 import com.mycomp.core.service.goodstemplate.GoodsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
@@ -111,7 +113,8 @@ public class GoodsServiceImpl implements GoodsService {
             if (goodsSearch.getGoodsName() != null && !goodsSearch.getGoodsName().equals("")) {
                 criteria.andGoodsNameLike("%" + goodsSearch.getGoodsName() + "%");
             }
-            if (goodsSearch.getAuditStatus() != null && !goodsSearch.getAuditStatus().equals("")) {
+            if (goodsSearch.getAuditStatus() != null && !goodsSearch.getAuditStatus().equals("")
+                    && !goodsSearch.getAuditStatus().equals("-1")) {
                 criteria.andAuditStatusEqualTo(goodsSearch.getAuditStatus());
             }
             if (goodsSearch.getSellerId() != null && !goodsSearch.getSellerId().equals("")
@@ -119,7 +122,15 @@ public class GoodsServiceImpl implements GoodsService {
                 criteria.andSellerIdEqualTo(goodsSearch.getSellerId());
             }
         }
-        criteria.andIsDeleteIsNull();
+        if (goodsSearch != null && goodsSearch.getSellerId() != null && !goodsSearch.getSellerId().equals("")) {
+            if (!goodsSearch.getSellerId().equals("admin")) {
+                criteria.andIsDeleteIsNull();
+            } else {
+                if (goodsSearch.getIsDelete() != null && goodsSearch.getIsDelete().equals("1")) {
+                    criteria.andIsDeleteEqualTo(goodsSearch.getIsDelete());
+                }
+            }
+        }
         Page<Goods> pageRes = (Page<Goods>) goodsDao.selectByExample(goodsQuery);
         return new PageResult<Goods>(pageRes.getTotal(), pageRes.getResult());
     }
@@ -187,6 +198,29 @@ public class GoodsServiceImpl implements GoodsService {
         criteria.andGoodsIdIn(Arrays.asList(goodsIds));
         criteria.andStatusEqualTo(status);
         return itemDao.selectByExample(query);
+    }
+
+    @Override
+    public void deleteGoodsFromDB(Long[] targetIds) throws DeleteGoodsFromDBException {
+        for (Long targetId : targetIds) {
+            Goods goods = goodsDao.selectByPrimaryKey(targetId);
+            if (goods.getIsDelete() == null || goods.getIsDelete().equals("")
+                    || !goods.getIsDelete().equals("1")) {
+                throw new DeleteGoodsFromDBException("选择的待删除商品中存在还未被商家删除的商品, 您不能删除...");
+            }
+        }
+        ItemQuery itemQuery = new ItemQuery();
+        ItemQuery.Criteria itemQueryCriteria = itemQuery.createCriteria();
+        itemQueryCriteria.andGoodsIdIn(Arrays.asList(targetIds));
+        itemDao.deleteByExample(itemQuery);
+        GoodsDescQuery goodsDescQuery = new GoodsDescQuery();
+        GoodsDescQuery.Criteria goodsDescQueryCriteria = goodsDescQuery.createCriteria();
+        goodsDescQueryCriteria.andGoodsIdIn(Arrays.asList(targetIds));
+        goodsDescDao.deleteByExample(goodsDescQuery);
+        GoodsQuery goodsQuery = new GoodsQuery();
+        GoodsQuery.Criteria goodsQueryCriteria = goodsQuery.createCriteria();
+        goodsQueryCriteria.andIdIn(Arrays.asList(targetIds));
+        goodsDao.deleteByExample(goodsQuery);
     }
 
 }
