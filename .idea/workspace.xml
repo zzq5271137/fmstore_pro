@@ -6,14 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3ac7d70b-d1cf-48c5-b158-f47fe452bd9c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/interface/src/main/java/com/mycomp/core/service/itemsearch/SolrManagementService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service_search/src/main/java/com/mycomp/core/service/itemsearch/impl/SolrManagementServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/interface/src/main/java/com/mycomp/core/service/goodstemplate/GoodsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/interface/src/main/java/com/mycomp/core/service/goodstemplate/GoodsService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service_sellergoods/src/main/java/com/mycomp/core/service/goodstemplate/impl/GoodsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/service_sellergoods/src/main/java/com/mycomp/core/service/goodstemplate/impl/GoodsServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_manager/src/main/java/com/mycomp/core/controller/goodstemplate/GoodsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/web_manager/src/main/java/com/mycomp/core/controller/goodstemplate/GoodsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_shop/src/main/java/com/mycomp/core/controller/goodsmanage/GoodsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/web_shop/src/main/java/com/mycomp/core/controller/goodsmanage/GoodsController.java" afterDir="false" />
-    </list>
+    <list default="true" id="3ac7d70b-d1cf-48c5-b158-f47fe452bd9c" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -1025,7 +1018,8 @@
       <workItem from="1591407080085" duration="13314000" />
       <workItem from="1591498739562" duration="13528000" />
       <workItem from="1591524688135" duration="8782000" />
-      <workItem from="1591534671853" duration="654000" />
+      <workItem from="1591534671853" duration="920000" />
+      <workItem from="1591583279994" duration="12000" />
     </task>
     <servers />
   </component>

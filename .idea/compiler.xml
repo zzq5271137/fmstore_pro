@@ -9,14 +9,14 @@
         <outputRelativeToContentRoot value="true" />
         <module name="service_sellergoods" />
         <module name="interface" />
-        <module name="dao" />
         <module name="web_shop" />
         <module name="service_search" />
         <module name="web_portal" />
-        <module name="pojo" />
+        <module name="dao" />
+        <module name="common" />
         <module name="solr_util" />
         <module name="web_manager" />
-        <module name="common" />
+        <module name="pojo" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
