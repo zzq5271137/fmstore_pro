@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:jms="http://www.springframework.org/schema/jms"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!--
+        我们使用JMS + ActiveMQ实现消息服务(JMS是JavaEE定义的技术规范, 全称为Java Message Service,
+        即Java消息服务), JMS提供统一接口, ActiveMQ提供具体服务; 这样做的好处是, 更换消息中间件不需要修改业务代码;
+        即当我们想要更换提供具体服务的消息中间件时(比如想要换成RabbitMQ、Kafka等), 调用消息服务的业务代码是不需要修改的,
+        因为由JMS提供的消息服务的接口并没有改变, 我们只需要改变配置, 让JMS使用新的消息中间件即可;
+    -->
+
+    <!-- 真正可以产生Connection的ConnectionFactory, 由对应的JMS服务厂商提供(如这里使用的ActiveMQ) -->
+    <bean id="targetConnectionFactory" class="org.apache.activemq.ActiveMQConnectionFactory">
+        <property name="brokerURL" value="tcp://192.168.70.3:61616"/>
+    </bean>
+
+    <!-- Spring的用于管理真正的ConnectionFactory的ConnectionFactory -->
+    <bean id="connectionFactory" class="org.springframework.jms.connection.SingleConnectionFactory">
+        <!-- 指向真正可以产生Connection的ConnectionFactory -->
+        <property name="targetConnectionFactory" ref="targetConnectionFactory"/>
+    </bean>
+
+    <!-- 发布订阅模式, 自定义Topic, 用于存放将商品导入索引库和生成静态页面的消息, 发送和接收时使用id而不使用Topic的名称 -->
+    <bean id="topicPageAndSolrDestination" class="org.apache.activemq.command.ActiveMQTopic">
+        <!-- 自定义Topic的名称, 将商品上架所用的商品id发送到这个Topic中, 发送方与接收方需要约定相同的名称 -->
+        <constructor-arg value="topic_page_solr"/>
+    </bean>
+
+    <!-- 发布订阅模式, 消息监听容器 -->
+    <bean class="org.springframework.jms.listener.DefaultMessageListenerContainer">
+        <property name="connectionFactory" ref="connectionFactory"/>
+        <property name="destination" ref="topicPageAndSolrDestination"/>
+        <property name="messageListener" ref="createPageListener"/>
+    </bean>
+
+    <bean id="createPageListener" class="com.mycomp.core.listener.CreatePageListener"/>
+
+</beans>
