@@ -7,7 +7,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3ac7d70b-d1cf-48c5-b158-f47fe452bd9c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/web_manager/src/main/java/com/mycomp/core/controller/goodstemplate/GoodsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/web_manager/src/main/java/com/mycomp/core/controller/goodstemplate/GoodsController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/服务器启动项.txt" beforeDir="false" afterPath="$PROJECT_DIR$/服务器启动项.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -1141,7 +1140,7 @@
       <workItem from="1591586369520" duration="19723000" />
       <workItem from="1591619140001" duration="112000" />
       <workItem from="1591619278438" duration="5987000" />
-      <workItem from="1591670714764" duration="2196000" />
+      <workItem from="1591670714764" duration="2715000" />
     </task>
     <servers />
   </component>
