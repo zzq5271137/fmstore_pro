@@ -7,46 +7,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3ac7d70b-d1cf-48c5-b158-f47fe452bd9c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/service_page/src/main/java/com/mycomp/core/listener/CreatePageListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service_page/src/main/resources/spring/applicationContext-jms-consumer.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service_search/src/main/java/com/mycomp/core/listener/DeleteSolrListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service_search/src/main/java/com/mycomp/core/listener/InsertSolrListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service_search/src/main/resources/spring/applicationContext-jms-consumer.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service_sellergoods/src/main/resources/spring/applicationContext-jms.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service_page/src/main/resources/spring/applicationContext-tx.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/本地安装依赖库/阿里云API/aliyun-java-sdk-core-4.4.6.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/本地安装依赖库/阿里云API/aliyun-java-sdk-ecs-4.17.6.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/common/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/common/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service_page/target/service_page/WEB-INF/lib/common-1.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/service_page/target/service_page/WEB-INF/lib/common-1.0.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service_page/target/service_page/WEB-INF/lib/dao-1.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/service_page/target/service_page/WEB-INF/lib/dao-1.0.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service_page/target/service_page/WEB-INF/lib/interface-1.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/service_page/target/service_page/WEB-INF/lib/interface-1.0.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service_page/target/service_page/WEB-INF/lib/pojo-1.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/service_page/target/service_page/WEB-INF/lib/pojo-1.0.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service_search/target/service_search/WEB-INF/lib/common-1.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/service_search/target/service_search/WEB-INF/lib/common-1.0.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service_search/target/service_search/WEB-INF/lib/dao-1.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/service_search/target/service_search/WEB-INF/lib/dao-1.0.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service_search/target/service_search/WEB-INF/lib/interface-1.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/service_search/target/service_search/WEB-INF/lib/interface-1.0.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service_search/target/service_search/WEB-INF/lib/pojo-1.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/service_search/target/service_search/WEB-INF/lib/pojo-1.0.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service_sellergoods/src/main/java/com/mycomp/core/service/goodstemplate/impl/GoodsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/service_sellergoods/src/main/java/com/mycomp/core/service/goodstemplate/impl/GoodsServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service_sellergoods/target/classes/META-INF/service_sellergoods.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service_sellergoods/target/classes/com/mycomp/core/service/goodstemplate/impl/GoodsServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/service_sellergoods/target/classes/com/mycomp/core/service/goodstemplate/impl/GoodsServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service_sellergoods/target/service_sellergoods/WEB-INF/classes/META-INF/service_sellergoods.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service_sellergoods/target/service_sellergoods/WEB-INF/classes/com/mycomp/core/service/goodstemplate/impl/GoodsServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/service_sellergoods/target/service_sellergoods/WEB-INF/classes/com/mycomp/core/service/goodstemplate/impl/GoodsServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service_sellergoods/target/service_sellergoods/WEB-INF/lib/common-1.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/service_sellergoods/target/service_sellergoods/WEB-INF/lib/common-1.0.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service_sellergoods/target/service_sellergoods/WEB-INF/lib/dao-1.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/service_sellergoods/target/service_sellergoods/WEB-INF/lib/dao-1.0.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service_sellergoods/target/service_sellergoods/WEB-INF/lib/interface-1.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/service_sellergoods/target/service_sellergoods/WEB-INF/lib/interface-1.0.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service_sellergoods/target/service_sellergoods/WEB-INF/lib/pojo-1.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/service_sellergoods/target/service_sellergoods/WEB-INF/lib/pojo-1.0.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_manager/src/main/java/com/mycomp/core/controller/goodstemplate/GoodsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/web_manager/src/main/java/com/mycomp/core/controller/goodstemplate/GoodsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_manager/target/classes/com/mycomp/core/controller/goodstemplate/GoodsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/web_manager/target/classes/com/mycomp/core/controller/goodstemplate/GoodsController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_manager/target/web_manager/WEB-INF/classes/com/mycomp/core/controller/goodstemplate/GoodsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/web_manager/target/web_manager/WEB-INF/classes/com/mycomp/core/controller/goodstemplate/GoodsController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_manager/target/web_manager/WEB-INF/lib/common-1.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/web_manager/target/web_manager/WEB-INF/lib/common-1.0.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_manager/target/web_manager/WEB-INF/lib/interface-1.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/web_manager/target/web_manager/WEB-INF/lib/interface-1.0.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_manager/target/web_manager/WEB-INF/lib/pojo-1.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/web_manager/target/web_manager/WEB-INF/lib/pojo-1.0.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_portal/target/web_portal/WEB-INF/lib/common-1.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/web_portal/target/web_portal/WEB-INF/lib/common-1.0.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_portal/target/web_portal/WEB-INF/lib/interface-1.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/web_portal/target/web_portal/WEB-INF/lib/interface-1.0.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_portal/target/web_portal/WEB-INF/lib/pojo-1.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/web_portal/target/web_portal/WEB-INF/lib/pojo-1.0.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_shop/src/main/java/com/mycomp/core/controller/goodsmanage/GoodsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/web_shop/src/main/java/com/mycomp/core/controller/goodsmanage/GoodsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_shop/target/classes/com/mycomp/core/controller/goodsmanage/GoodsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/web_shop/target/classes/com/mycomp/core/controller/goodsmanage/GoodsController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_shop/target/web_shop/WEB-INF/classes/com/mycomp/core/controller/goodsmanage/GoodsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/web_shop/target/web_shop/WEB-INF/classes/com/mycomp/core/controller/goodsmanage/GoodsController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_shop/target/web_shop/WEB-INF/lib/common-1.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/web_shop/target/web_shop/WEB-INF/lib/common-1.0.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_shop/target/web_shop/WEB-INF/lib/interface-1.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/web_shop/target/web_shop/WEB-INF/lib/interface-1.0.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_shop/target/web_shop/WEB-INF/lib/pojo-1.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/web_shop/target/web_shop/WEB-INF/lib/pojo-1.0.jar" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -150,7 +115,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/service_search/src/main/resources/spring" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/service_user/src/main/resources/spring" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -179,11 +144,11 @@
       <recent name="com.mycomp.core.controller.goodsmanage" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="H:\IDEA_workspace\FMStorePro\service_search\src\main\resources\spring" />
-      <recent name="H:\IDEA_workspace\FMStorePro\service_page\src\main\webapp" />
-      <recent name="H:\IDEA_workspace\FMStorePro\service_page\src\main\webapp\WEB-INF\ftl" />
+      <recent name="H:\IDEA_workspace\FMStorePro\service_user\src\main\resources\spring" />
       <recent name="H:\IDEA_workspace\FMStorePro\service_page\src\main\resources\spring" />
-      <recent name="H:\IDEA_workspace\FMStorePro\service_page\src\main\resources" />
+      <recent name="H:\IDEA_workspace\FMStorePro\service_user\src\main\resources" />
+      <recent name="H:\IDEA_workspace\FMStorePro\本地安装依赖库\阿里云API" />
+      <recent name="H:\IDEA_workspace\FMStorePro\service_search\src\main\resources\spring" />
     </key>
   </component>
   <component name="RestServicesNavigator">
@@ -1028,11 +993,6 @@
                 <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
                 <item name="Tomcat Server" type="7427dc5b:ServiceModel$ServiceGroupNode" />
               </path>
-              <path>
-                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-                <item name="Tomcat Server" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-                <item name="Finished" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              </path>
             </expand>
             <select />
           </treeState>
@@ -1195,6 +1155,10 @@
       <workItem from="1591688357028" duration="755000" />
       <workItem from="1591689114600" duration="63000" />
       <workItem from="1591689198564" duration="2454000" />
+      <workItem from="1591710555711" duration="133000" />
+      <workItem from="1591711038760" duration="1523000" />
+      <workItem from="1591712659275" duration="64000" />
+      <workItem from="1591712738953" duration="1634000" />
     </task>
     <servers />
   </component>
@@ -1241,22 +1205,22 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="594" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1589536677455" />
-    <state width="1281" height="295" key="GridCell.Tab.0.bottom" timestamp="1591691654377">
+    <state width="1493" height="229" key="GridCell.Tab.0.bottom" timestamp="1591714373927">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1281" height="295" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1591691654377" />
-    <state width="1281" height="295" key="GridCell.Tab.0.center" timestamp="1591691654377">
+    <state width="1493" height="229" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1591714373927" />
+    <state width="1493" height="229" key="GridCell.Tab.0.center" timestamp="1591714373927">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1281" height="295" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1591691654377" />
-    <state width="1281" height="295" key="GridCell.Tab.0.left" timestamp="1591691654377">
+    <state width="1493" height="229" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1591714373927" />
+    <state width="1493" height="229" key="GridCell.Tab.0.left" timestamp="1591714373926">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1281" height="295" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1591691654377" />
-    <state width="1281" height="295" key="GridCell.Tab.0.right" timestamp="1591691654377">
+    <state width="1493" height="229" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1591714373926" />
+    <state width="1493" height="229" key="GridCell.Tab.0.right" timestamp="1591714373927">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1281" height="295" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1591691654377" />
+    <state width="1493" height="229" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1591714373927" />
     <state width="1281" height="295" key="GridCell.Tab.1.bottom" timestamp="1591691654377">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -1301,17 +1265,17 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="270" y="6" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1536.824@0.0.1536.824" timestamp="1590417188995" />
-    <state x="196" y="132" key="new project wizard" timestamp="1591587244847">
+    <state x="196" y="132" key="new project wizard" timestamp="1591713301314">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="196" y="132" key="new project wizard/0.0.1536.824@0.0.1536.824" timestamp="1591587244847" />
+    <state x="196" y="132" key="new project wizard/0.0.1536.824@0.0.1536.824" timestamp="1591713301314" />
     <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1590130511831">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1590130511831" />
-    <state x="409" y="95" key="spring file set editor" timestamp="1591587696537">
+    <state x="409" y="95" key="spring file set editor" timestamp="1591713667373">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="409" y="95" key="spring file set editor/0.0.1536.824@0.0.1536.824" timestamp="1591587696537" />
+    <state x="409" y="95" key="spring file set editor/0.0.1536.824@0.0.1536.824" timestamp="1591713667373" />
   </component>
 </project>
