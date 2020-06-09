@@ -18,7 +18,7 @@
 3. Nginx
    启动: nginx
    查看: ps -ef|grep nginx
-        或者使用浏览器访问192.168.70.3:80, 观察是否显示Nginx的主页, 其中:
+        或者使用浏览器访问"http://192.168.70.3:80", 观察是否显示Nginx的主页, 其中:
         a). "192.168.70.3"为Nginx安装的服务器的ip地址;
         b). "80"为nginx.conf中配置的Nginx的监听端口;
    停止: nginx -s stop, 或者: nginx -s quit
@@ -29,10 +29,13 @@
 5. Solr
    1). Tomcat
        启动: /usr/local/dev/solr/tomcat/bin/startup.sh
-       查看: 使用浏览器访问192.168.70.3:8080, 观察是否显示Tomcat的主页;
+       查看: 使用浏览器访问"http://192.168.70.3:8080", 观察是否显示Tomcat的主页;
        停止: /usr/local/dev/solr/tomcat/bin/shutdown.sh
    2). Solr是一个JavaWeb应用, 我们部署在Tomcat中, Tomcat启动后, 可以直接通过浏览器访问, 地址:
        http://192.168.70.3:8080/solr
+6. ActiveMQ
+   启动: /usr/local/dev/ActiveMQ/apache-activemq-5.12.0/bin/activemq start
+   查看: 使用浏览器访问"http://192.168.70.3:8161", 观察是否显示ActiveMQ的主页
 
 配置FastDFS和Nginx开机自启动, 编辑/etc/rc.d/rc.local文件, 增加启动项:
 1. 在CentOS7中, /etc/rc.d/rc.local文件的权限被降低了, 需要给rc.local文件增加可执行的权限:
