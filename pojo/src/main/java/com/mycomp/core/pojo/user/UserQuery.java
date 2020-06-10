@@ -5,6 +5,7 @@ import java.util.Date;
 import java.util.List;
 
 public class UserQuery {
+
     protected String orderByClause;
 
     protected boolean distinct;
@@ -67,7 +68,7 @@ public class UserQuery {
     }
 
     public void setFields(String fields) {
-        this.fields=fields;
+        this.fields = fields;
     }
 
     public String getFields() {

@@ -7,6 +7,7 @@
     <file type="web" url="file://$PROJECT_DIR$/service_search" />
     <file type="web" url="file://$PROJECT_DIR$/service_sellergoods" />
     <file type="web" url="file://$PROJECT_DIR$/service_sellerManagement" />
+    <file type="web" url="file://$PROJECT_DIR$/service_sms" />
     <file type="web" url="file://$PROJECT_DIR$/service_user" />
     <file type="web" url="file://$PROJECT_DIR$/web_manager" />
     <file type="web" url="file://$PROJECT_DIR$/web_portal" />
@@ -25,10 +26,8 @@
       <set>
         <option value="$PROJECT_DIR$/service_manager/pom.xml" />
         <option value="$PROJECT_DIR$/service_sellerManagement/pom.xml" />
-        <option value="$PROJECT_DIR$/service_user/pom.xml" />
         <option value="$PROJECT_DIR$/web_seller/pom.xml" />
         <option value="$PROJECT_DIR$/web_sellerManagement/pom.xml" />
-        <option value="$PROJECT_DIR$/web_user/pom.xml" />
       </set>
     </option>
   </component>

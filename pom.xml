@@ -19,9 +19,12 @@
         <module>service_sellergoods</module>
         <module>service_search</module>
         <module>service_page</module>
+        <module>service_user</module>
+        <module>service_sms</module>
         <module>web_manager</module>
         <module>web_shop</module>
         <module>web_portal</module>
+        <module>web_user</module>
     </modules>
 
     <!-- 集中定义依赖版本号 -->

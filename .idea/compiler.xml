@@ -7,26 +7,27 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="service_sellergoods" />
-        <module name="interface" />
-        <module name="web_shop" />
-        <module name="common" />
-        <module name="web_portal" />
-        <module name="service_search" />
-        <module name="dao" />
-        <module name="solr_util" />
-        <module name="service_page" />
-        <module name="web_manager" />
         <module name="pojo" />
+        <module name="web_portal" />
+        <module name="service_user" />
+        <module name="service_page" />
+        <module name="dao" />
+        <module name="service_search" />
+        <module name="service_sms" />
+        <module name="web_manager" />
+        <module name="web_shop" />
+        <module name="solr_util" />
+        <module name="interface" />
+        <module name="web_user" />
+        <module name="common" />
+        <module name="service_sellergoods" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="service_manager" target="1.8" />
       <module name="service_sellerManagement" target="1.8" />
-      <module name="service_user" target="1.8" />
       <module name="web_seller" target="1.8" />
       <module name="web_sellerManagement" target="1.8" />
-      <module name="web_user" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
@@ -42,6 +43,7 @@
       <module name="service_search" options="" />
       <module name="service_sellerManagement" options="" />
       <module name="service_sellergoods" options="" />
+      <module name="service_sms" options="" />
       <module name="service_user" options="" />
       <module name="solr_util" options="" />
       <module name="web_manager" options="" />
