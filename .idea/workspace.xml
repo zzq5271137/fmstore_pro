@@ -7,11 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3ac7d70b-d1cf-48c5-b158-f47fe452bd9c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/service_page/src/main/resources/spring/applicationContext-tx.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/本地安装依赖库/阿里云API/aliyun-java-sdk-core-4.4.6.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/本地安装依赖库/阿里云API/aliyun-java-sdk-ecs-4.17.6.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/common/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/本地安装依赖库/阿里云API/aliyun-java-sdk-core-4.4.6.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/本地安装依赖库/阿里云API/aliyun-java-sdk-ecs-4.17.6.jar" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -1159,6 +1156,8 @@
       <workItem from="1591711038760" duration="1523000" />
       <workItem from="1591712659275" duration="64000" />
       <workItem from="1591712738953" duration="1634000" />
+      <workItem from="1591759006739" duration="151000" />
+      <workItem from="1591759179676" duration="237000" />
     </task>
     <servers />
   </component>

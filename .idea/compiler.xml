@@ -10,9 +10,9 @@
         <module name="service_sellergoods" />
         <module name="interface" />
         <module name="web_shop" />
-        <module name="service_search" />
         <module name="common" />
         <module name="web_portal" />
+        <module name="service_search" />
         <module name="dao" />
         <module name="solr_util" />
         <module name="service_page" />
