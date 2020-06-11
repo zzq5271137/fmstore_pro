@@ -5,7 +5,7 @@ import com.mycomp.core.pojo.good.Goods;
 import com.mycomp.core.pojo.queryentity.PageResult;
 import com.mycomp.core.pojo.queryentity.RestResult;
 import com.mycomp.core.service.cmsservice.CmsService;
-import com.mycomp.core.service.exceptions.DeleteGoodsFromDBException;
+import com.mycomp.core.exceptions.DeleteGoodsFromDBException;
 import com.mycomp.core.service.goodstemplate.GoodsService;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.RequestBody;

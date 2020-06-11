@@ -4,7 +4,7 @@ import com.mycomp.core.pojo.good.Goods;
 import com.mycomp.core.pojo.item.Item;
 import com.mycomp.core.pojo.queryentity.GoodsEntity;
 import com.mycomp.core.pojo.queryentity.PageResult;
-import com.mycomp.core.service.exceptions.DeleteGoodsFromDBException;
+import com.mycomp.core.exceptions.DeleteGoodsFromDBException;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package com.mycomp.core.service.exceptions;
+package com.mycomp.core.exceptions;
 
 import java.io.Serializable;
 

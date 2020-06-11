@@ -18,7 +18,7 @@ import com.mycomp.core.pojo.item.Item;
 import com.mycomp.core.pojo.item.ItemQuery;
 import com.mycomp.core.pojo.queryentity.GoodsEntity;
 import com.mycomp.core.pojo.queryentity.PageResult;
-import com.mycomp.core.service.exceptions.DeleteGoodsFromDBException;
+import com.mycomp.core.exceptions.DeleteGoodsFromDBException;
 import com.mycomp.core.service.goodstemplate.GoodsService;
 import org.apache.activemq.command.ActiveMQQueue;
 import org.apache.activemq.command.ActiveMQTopic;

@@ -27,15 +27,18 @@ new Vue({
                 alert("请填写手机号码");
                 return;
             }
-            // 比较两次输入的密码是否一致
             if (this.userEntity.password !== this.password2) {
                 alert("两次输入密码不一致，请重新输入");
                 return;
             }
+            if (this.userEntity.smscode === null || this.userEntity.smscode === "") {
+                alert("请填写验证码");
+                return;
+            }
             axios.post('/user/addUser.do?smscode=' + this.userEntity.smscode, this.userEntity)
                 .then(function (response) {
-                    // 获取服务端响应的结果
                     if (response.data.success) {
+                        alert(response.data.message);
                         location.href = "login.html";
                     } else {
                         alert(response.data.message);

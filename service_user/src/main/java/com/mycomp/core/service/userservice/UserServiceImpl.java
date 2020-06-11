@@ -3,6 +3,9 @@ package com.mycomp.core.service.userservice;
 import com.alibaba.dubbo.config.annotation.Service;
 import com.alibaba.fastjson.JSON;
 import com.mycomp.core.dao.user.UserDao;
+import com.mycomp.core.exceptions.WrongSmscodeException;
+import com.mycomp.core.pojo.user.User;
+import com.mycomp.core.pojo.user.UserQuery;
 import org.apache.activemq.command.ActiveMQQueue;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
@@ -15,6 +18,7 @@ import javax.jms.JMSException;
 import javax.jms.MapMessage;
 import javax.jms.Message;
 import javax.jms.Session;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
@@ -71,6 +75,24 @@ public class UserServiceImpl implements UserService {
                 return message;
             }
         });
+    }
+
+    @Override
+    public void addUser(String smscode, User user) throws WrongSmscodeException {
+        if (!redisTemplate.boundValueOps(user.getPhone()).get().equals(smscode)) {
+            throw new WrongSmscodeException("短信验证码输入有误...");
+        }
+        user.setCreated(new Date());
+        user.setUpdated(new Date());
+        userDao.insertSelective(user);
+    }
+
+    @Override
+    public User getUserByUsername(String username) {
+        UserQuery query = new UserQuery();
+        UserQuery.Criteria criteria = query.createCriteria();
+        criteria.andUsernameEqualTo(username);
+        return userDao.selectByExample(query).get(0);
     }
 
 }

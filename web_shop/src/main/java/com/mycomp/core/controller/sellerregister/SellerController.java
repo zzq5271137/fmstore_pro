@@ -36,7 +36,7 @@ public class SellerController {
             sellerService.addSeller(seller);
             return new RestResult(true, "注册成功, 等待运行商审核");
         } catch (Exception e) {
-            return new RestResult(true, "注册失败...");
+            return new RestResult(false, "注册失败...");
         }
     }
 
