@@ -2,44 +2,176 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="web_user:war exploded" />
+      <artifact name="web_shop:war exploded" />
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3ac7d70b-d1cf-48c5-b158-f47fe452bd9c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/interface/src/main/java/com/mycomp/core/exceptions/WrongSmscodeException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web_user/src/main/java/com/mycomp/core/service/userlogin/UserDetailsServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web_user/src/main/resources/spring/spring-security.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web_user/usr-pwd.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/interface/src/main/java/com/mycomp/core/service/exceptions/DeleteGoodsFromDBException.java" beforeDir="false" afterPath="$PROJECT_DIR$/interface/src/main/java/com/mycomp/core/exceptions/DeleteGoodsFromDBException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/interface/src/main/java/com/mycomp/core/service/goodstemplate/GoodsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/interface/src/main/java/com/mycomp/core/service/goodstemplate/GoodsService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/interface/src/main/java/com/mycomp/core/service/userservice/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/interface/src/main/java/com/mycomp/core/service/userservice/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/interface/target/classes/com/mycomp/core/service/exceptions/DeleteGoodsFromDBException.class" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/interface/src/main/java/com/mycomp/core/service/userlogin/UserDetailsServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web_portal/src/main/resources/spring/spring-security.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web_portal/usr-pwd.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/common/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/target/classes/com/mycomp/utils/FastDFSClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/common/target/classes/com/mycomp/utils/FastDFSClient.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/target/classes/com/mycomp/utils/PhoneFormatCheckUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/common/target/classes/com/mycomp/utils/PhoneFormatCheckUtils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/target/classes/com/mycomp/utils/RedisKeys.class" beforeDir="false" afterPath="$PROJECT_DIR$/common/target/classes/com/mycomp/utils/RedisKeys.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/target/classes/com/mycomp/utils/SmsUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/common/target/classes/com/mycomp/utils/SmsUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interface/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/interface/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interface/target/classes/com/mycomp/core/exceptions/DeleteGoodsFromDBException.class" beforeDir="false" afterPath="$PROJECT_DIR$/interface/target/classes/com/mycomp/core/exceptions/DeleteGoodsFromDBException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interface/target/classes/com/mycomp/core/exceptions/WrongSmscodeException.class" beforeDir="false" afterPath="$PROJECT_DIR$/interface/target/classes/com/mycomp/core/exceptions/WrongSmscodeException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interface/target/classes/com/mycomp/core/service/admanage/ContentCatService.class" beforeDir="false" afterPath="$PROJECT_DIR$/interface/target/classes/com/mycomp/core/service/admanage/ContentCatService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interface/target/classes/com/mycomp/core/service/admanage/ContentService.class" beforeDir="false" afterPath="$PROJECT_DIR$/interface/target/classes/com/mycomp/core/service/admanage/ContentService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interface/target/classes/com/mycomp/core/service/cmsservice/CmsService.class" beforeDir="false" afterPath="$PROJECT_DIR$/interface/target/classes/com/mycomp/core/service/cmsservice/CmsService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interface/target/classes/com/mycomp/core/service/goodstemplate/BrandService.class" beforeDir="false" afterPath="$PROJECT_DIR$/interface/target/classes/com/mycomp/core/service/goodstemplate/BrandService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/interface/target/classes/com/mycomp/core/service/goodstemplate/GoodsService.class" beforeDir="false" afterPath="$PROJECT_DIR$/interface/target/classes/com/mycomp/core/service/goodstemplate/GoodsService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interface/target/classes/com/mycomp/core/service/goodstemplate/ItemCatService.class" beforeDir="false" afterPath="$PROJECT_DIR$/interface/target/classes/com/mycomp/core/service/goodstemplate/ItemCatService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interface/target/classes/com/mycomp/core/service/goodstemplate/SpecService.class" beforeDir="false" afterPath="$PROJECT_DIR$/interface/target/classes/com/mycomp/core/service/goodstemplate/SpecService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interface/target/classes/com/mycomp/core/service/goodstemplate/TypeTemplateService.class" beforeDir="false" afterPath="$PROJECT_DIR$/interface/target/classes/com/mycomp/core/service/goodstemplate/TypeTemplateService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interface/target/classes/com/mycomp/core/service/itemsearch/SearchService.class" beforeDir="false" afterPath="$PROJECT_DIR$/interface/target/classes/com/mycomp/core/service/itemsearch/SearchService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interface/target/classes/com/mycomp/core/service/itemsearch/SolrManagementService.class" beforeDir="false" afterPath="$PROJECT_DIR$/interface/target/classes/com/mycomp/core/service/itemsearch/SolrManagementService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interface/target/classes/com/mycomp/core/service/sellerservice/SellerService.class" beforeDir="false" afterPath="$PROJECT_DIR$/interface/target/classes/com/mycomp/core/service/sellerservice/SellerService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/interface/target/classes/com/mycomp/core/service/userservice/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/interface/target/classes/com/mycomp/core/service/userservice/UserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service_sellergoods/src/main/java/com/mycomp/core/service/goodstemplate/impl/GoodsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/service_sellergoods/src/main/java/com/mycomp/core/service/goodstemplate/impl/GoodsServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pojo/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pojo/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/ad/Content.class" beforeDir="false" afterPath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/ad/Content.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/ad/ContentCategory.class" beforeDir="false" afterPath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/ad/ContentCategory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/ad/ContentCategoryQuery$Criteria.class" beforeDir="false" afterPath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/ad/ContentCategoryQuery$Criteria.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/ad/ContentCategoryQuery$Criterion.class" beforeDir="false" afterPath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/ad/ContentCategoryQuery$Criterion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/ad/ContentCategoryQuery$GeneratedCriteria.class" beforeDir="false" afterPath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/ad/ContentCategoryQuery$GeneratedCriteria.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/ad/ContentCategoryQuery.class" beforeDir="false" afterPath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/ad/ContentCategoryQuery.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/ad/ContentQuery$Criteria.class" beforeDir="false" afterPath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/ad/ContentQuery$Criteria.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/ad/ContentQuery$Criterion.class" beforeDir="false" afterPath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/ad/ContentQuery$Criterion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/ad/ContentQuery$GeneratedCriteria.class" beforeDir="false" afterPath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/ad/ContentQuery$GeneratedCriteria.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/ad/ContentQuery.class" beforeDir="false" afterPath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/ad/ContentQuery.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/good/Brand.class" beforeDir="false" afterPath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/good/Brand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/good/BrandQuery$Criteria.class" beforeDir="false" afterPath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/good/BrandQuery$Criteria.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/good/BrandQuery$Criterion.class" beforeDir="false" afterPath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/good/BrandQuery$Criterion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/good/BrandQuery$GeneratedCriteria.class" beforeDir="false" afterPath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/good/BrandQuery$GeneratedCriteria.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/good/BrandQuery.class" beforeDir="false" afterPath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/good/BrandQuery.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/good/Goods.class" beforeDir="false" afterPath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/good/Goods.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/good/GoodsDesc.class" beforeDir="false" afterPath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/good/GoodsDesc.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/good/GoodsDescQuery$Criteria.class" beforeDir="false" afterPath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/good/GoodsDescQuery$Criteria.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/good/GoodsDescQuery$Criterion.class" beforeDir="false" afterPath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/good/GoodsDescQuery$Criterion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/good/GoodsDescQuery$GeneratedCriteria.class" beforeDir="false" afterPath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/good/GoodsDescQuery$GeneratedCriteria.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/good/GoodsDescQuery.class" beforeDir="false" afterPath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/good/GoodsDescQuery.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/good/GoodsQuery$Criteria.class" beforeDir="false" afterPath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/good/GoodsQuery$Criteria.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/good/GoodsQuery$Criterion.class" beforeDir="false" afterPath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/good/GoodsQuery$Criterion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/good/GoodsQuery$GeneratedCriteria.class" beforeDir="false" afterPath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/good/GoodsQuery$GeneratedCriteria.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/good/GoodsQuery.class" beforeDir="false" afterPath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/good/GoodsQuery.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/item/Item.class" beforeDir="false" afterPath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/item/Item.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/item/ItemCat.class" beforeDir="false" afterPath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/item/ItemCat.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/item/ItemCatQuery$Criteria.class" beforeDir="false" afterPath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/item/ItemCatQuery$Criteria.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/item/ItemCatQuery$Criterion.class" beforeDir="false" afterPath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/item/ItemCatQuery$Criterion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/item/ItemCatQuery$GeneratedCriteria.class" beforeDir="false" afterPath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/item/ItemCatQuery$GeneratedCriteria.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/item/ItemCatQuery.class" beforeDir="false" afterPath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/item/ItemCatQuery.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/item/ItemQuery$Criteria.class" beforeDir="false" afterPath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/item/ItemQuery$Criteria.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/item/ItemQuery$Criterion.class" beforeDir="false" afterPath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/item/ItemQuery$Criterion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/item/ItemQuery$GeneratedCriteria.class" beforeDir="false" afterPath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/item/ItemQuery$GeneratedCriteria.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/item/ItemQuery.class" beforeDir="false" afterPath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/item/ItemQuery.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/log/PayLog.class" beforeDir="false" afterPath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/log/PayLog.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/log/PayLogQuery$Criteria.class" beforeDir="false" afterPath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/log/PayLogQuery$Criteria.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/log/PayLogQuery$Criterion.class" beforeDir="false" afterPath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/log/PayLogQuery$Criterion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/log/PayLogQuery$GeneratedCriteria.class" beforeDir="false" afterPath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/log/PayLogQuery$GeneratedCriteria.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/log/PayLogQuery.class" beforeDir="false" afterPath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/log/PayLogQuery.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/order/Order.class" beforeDir="false" afterPath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/order/Order.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/order/OrderItem.class" beforeDir="false" afterPath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/order/OrderItem.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/order/OrderItemQuery$Criteria.class" beforeDir="false" afterPath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/order/OrderItemQuery$Criteria.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/order/OrderItemQuery$Criterion.class" beforeDir="false" afterPath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/order/OrderItemQuery$Criterion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/order/OrderItemQuery$GeneratedCriteria.class" beforeDir="false" afterPath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/order/OrderItemQuery$GeneratedCriteria.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/order/OrderItemQuery.class" beforeDir="false" afterPath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/order/OrderItemQuery.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/order/OrderQuery$Criteria.class" beforeDir="false" afterPath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/order/OrderQuery$Criteria.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/order/OrderQuery$Criterion.class" beforeDir="false" afterPath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/order/OrderQuery$Criterion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/order/OrderQuery$GeneratedCriteria.class" beforeDir="false" afterPath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/order/OrderQuery$GeneratedCriteria.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/order/OrderQuery.class" beforeDir="false" afterPath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/order/OrderQuery.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/queryentity/GoodsEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/queryentity/GoodsEntity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/queryentity/PageResult.class" beforeDir="false" afterPath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/queryentity/PageResult.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/queryentity/RestResult.class" beforeDir="false" afterPath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/queryentity/RestResult.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/queryentity/SpecEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/queryentity/SpecEntity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/seller/Seller.class" beforeDir="false" afterPath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/seller/Seller.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/seller/SellerQuery$Criteria.class" beforeDir="false" afterPath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/seller/SellerQuery$Criteria.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/seller/SellerQuery$Criterion.class" beforeDir="false" afterPath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/seller/SellerQuery$Criterion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/seller/SellerQuery$GeneratedCriteria.class" beforeDir="false" afterPath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/seller/SellerQuery$GeneratedCriteria.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/seller/SellerQuery.class" beforeDir="false" afterPath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/seller/SellerQuery.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/specification/Specification.class" beforeDir="false" afterPath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/specification/Specification.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/specification/SpecificationOption.class" beforeDir="false" afterPath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/specification/SpecificationOption.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/specification/SpecificationOptionQuery$Criteria.class" beforeDir="false" afterPath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/specification/SpecificationOptionQuery$Criteria.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/specification/SpecificationOptionQuery$Criterion.class" beforeDir="false" afterPath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/specification/SpecificationOptionQuery$Criterion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/specification/SpecificationOptionQuery$GeneratedCriteria.class" beforeDir="false" afterPath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/specification/SpecificationOptionQuery$GeneratedCriteria.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/specification/SpecificationOptionQuery.class" beforeDir="false" afterPath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/specification/SpecificationOptionQuery.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/specification/SpecificationQuery$Criteria.class" beforeDir="false" afterPath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/specification/SpecificationQuery$Criteria.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/specification/SpecificationQuery$Criterion.class" beforeDir="false" afterPath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/specification/SpecificationQuery$Criterion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/specification/SpecificationQuery$GeneratedCriteria.class" beforeDir="false" afterPath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/specification/SpecificationQuery$GeneratedCriteria.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/specification/SpecificationQuery.class" beforeDir="false" afterPath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/specification/SpecificationQuery.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/template/TypeTemplate.class" beforeDir="false" afterPath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/template/TypeTemplate.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/template/TypeTemplateQuery$Criteria.class" beforeDir="false" afterPath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/template/TypeTemplateQuery$Criteria.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/template/TypeTemplateQuery$Criterion.class" beforeDir="false" afterPath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/template/TypeTemplateQuery$Criterion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/template/TypeTemplateQuery$GeneratedCriteria.class" beforeDir="false" afterPath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/template/TypeTemplateQuery$GeneratedCriteria.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/template/TypeTemplateQuery.class" beforeDir="false" afterPath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/template/TypeTemplateQuery.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/user/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/user/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/user/UserQuery$Criteria.class" beforeDir="false" afterPath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/user/UserQuery$Criteria.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/user/UserQuery$Criterion.class" beforeDir="false" afterPath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/user/UserQuery$Criterion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/user/UserQuery$GeneratedCriteria.class" beforeDir="false" afterPath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/user/UserQuery$GeneratedCriteria.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/user/UserQuery.class" beforeDir="false" afterPath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/user/UserQuery.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service_page/target/service_page/WEB-INF/lib/common-1.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/service_page/target/service_page/WEB-INF/lib/common-1.0.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service_page/target/service_page/WEB-INF/lib/dao-1.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/service_page/target/service_page/WEB-INF/lib/dao-1.0.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service_page/target/service_page/WEB-INF/lib/interface-1.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/service_page/target/service_page/WEB-INF/lib/interface-1.0.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service_page/target/service_page/WEB-INF/lib/pojo-1.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/service_page/target/service_page/WEB-INF/lib/pojo-1.0.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service_page/target/service_page/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/service_page/target/service_page/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service_search/target/service_search/WEB-INF/lib/common-1.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/service_search/target/service_search/WEB-INF/lib/common-1.0.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service_search/target/service_search/WEB-INF/lib/dao-1.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/service_search/target/service_search/WEB-INF/lib/dao-1.0.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service_search/target/service_search/WEB-INF/lib/interface-1.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/service_search/target/service_search/WEB-INF/lib/interface-1.0.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service_search/target/service_search/WEB-INF/lib/pojo-1.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/service_search/target/service_search/WEB-INF/lib/pojo-1.0.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service_sellergoods/target/classes/com/mycomp/core/service/goodstemplate/impl/GoodsServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/service_sellergoods/target/classes/com/mycomp/core/service/goodstemplate/impl/GoodsServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service_sellergoods/target/classes/spring/applicationContext-jms.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/service_sellergoods/target/service_sellergoods/WEB-INF/classes/com/mycomp/core/service/goodstemplate/impl/GoodsServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/service_sellergoods/target/service_sellergoods/WEB-INF/classes/com/mycomp/core/service/goodstemplate/impl/GoodsServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service_sellergoods/target/service_sellergoods/WEB-INF/classes/spring/applicationContext-jms.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/service_sellergoods/target/service_sellergoods/WEB-INF/lib/common-1.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/service_sellergoods/target/service_sellergoods/WEB-INF/lib/common-1.0.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service_sellergoods/target/service_sellergoods/WEB-INF/lib/dao-1.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/service_sellergoods/target/service_sellergoods/WEB-INF/lib/dao-1.0.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service_sellergoods/target/service_sellergoods/WEB-INF/lib/interface-1.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/service_sellergoods/target/service_sellergoods/WEB-INF/lib/interface-1.0.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service_sellergoods/target/service_sellergoods/WEB-INF/lib/pojo-1.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/service_sellergoods/target/service_sellergoods/WEB-INF/lib/pojo-1.0.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service_sms/target/service_sms/WEB-INF/lib/common-1.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/service_sms/target/service_sms/WEB-INF/lib/common-1.0.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service_sms/target/service_sms/WEB-INF/lib/dao-1.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/service_sms/target/service_sms/WEB-INF/lib/dao-1.0.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/service_sms/target/service_sms/WEB-INF/lib/interface-1.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/service_sms/target/service_sms/WEB-INF/lib/interface-1.0.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service_user/src/main/java/com/mycomp/core/service/userservice/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/service_user/src/main/java/com/mycomp/core/service/userservice/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service_user/target/classes/com/mycomp/core/service/userservice/UserServiceImpl$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/service_user/target/classes/com/mycomp/core/service/userservice/UserServiceImpl$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service_user/target/classes/com/mycomp/core/service/userservice/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/service_user/target/classes/com/mycomp/core/service/userservice/UserServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service_user/target/service_user/WEB-INF/classes/com/mycomp/core/service/userservice/UserServiceImpl$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/service_user/target/service_user/WEB-INF/classes/com/mycomp/core/service/userservice/UserServiceImpl$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service_user/target/service_user/WEB-INF/classes/com/mycomp/core/service/userservice/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/service_user/target/service_user/WEB-INF/classes/com/mycomp/core/service/userservice/UserServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service_sms/target/service_sms/WEB-INF/lib/pojo-1.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/service_sms/target/service_sms/WEB-INF/lib/pojo-1.0.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service_user/target/service_user/WEB-INF/lib/common-1.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/service_user/target/service_user/WEB-INF/lib/common-1.0.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service_user/target/service_user/WEB-INF/lib/dao-1.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/service_user/target/service_user/WEB-INF/lib/dao-1.0.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/service_user/target/service_user/WEB-INF/lib/interface-1.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/service_user/target/service_user/WEB-INF/lib/interface-1.0.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_manager/src/main/java/com/mycomp/core/controller/goodstemplate/GoodsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/web_manager/src/main/java/com/mycomp/core/controller/goodstemplate/GoodsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_shop/src/main/java/com/mycomp/core/controller/sellerregister/SellerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/web_shop/src/main/java/com/mycomp/core/controller/sellerregister/SellerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service_user/target/service_user/WEB-INF/lib/pojo-1.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/service_user/target/service_user/WEB-INF/lib/pojo-1.0.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web_manager/target/classes/com/mycomp/core/controller/goodstemplate/GoodsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/web_manager/target/classes/com/mycomp/core/controller/goodstemplate/GoodsController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web_manager/target/web_manager/WEB-INF/classes/com/mycomp/core/controller/goodstemplate/GoodsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/web_manager/target/web_manager/WEB-INF/classes/com/mycomp/core/controller/goodstemplate/GoodsController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web_manager/target/web_manager/WEB-INF/lib/common-1.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/web_manager/target/web_manager/WEB-INF/lib/common-1.0.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web_manager/target/web_manager/WEB-INF/lib/interface-1.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/web_manager/target/web_manager/WEB-INF/lib/interface-1.0.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web_manager/target/web_manager/WEB-INF/lib/pojo-1.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/web_manager/target/web_manager/WEB-INF/lib/pojo-1.0.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web_portal/src/main/resources/spring/springmvc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web_portal/src/main/resources/spring/springmvc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web_portal/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web_portal/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web_portal/target/classes/spring/springmvc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web_portal/target/classes/spring/springmvc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web_portal/target/web_portal/WEB-INF/classes/spring/springmvc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web_portal/target/web_portal/WEB-INF/classes/spring/springmvc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web_portal/target/web_portal/WEB-INF/lib/common-1.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/web_portal/target/web_portal/WEB-INF/lib/common-1.0.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web_portal/target/web_portal/WEB-INF/lib/interface-1.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/web_portal/target/web_portal/WEB-INF/lib/interface-1.0.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web_portal/target/web_portal/WEB-INF/lib/pojo-1.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/web_portal/target/web_portal/WEB-INF/lib/pojo-1.0.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web_portal/target/web_portal/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web_portal/target/web_portal/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web_shop/target/classes/com/mycomp/core/controller/sellerregister/SellerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/web_shop/target/classes/com/mycomp/core/controller/sellerregister/SellerController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web_shop/target/web_shop/WEB-INF/classes/com/mycomp/core/controller/sellerregister/SellerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/web_shop/target/web_shop/WEB-INF/classes/com/mycomp/core/controller/sellerregister/SellerController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web_shop/target/web_shop/WEB-INF/lib/common-1.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/web_shop/target/web_shop/WEB-INF/lib/common-1.0.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web_shop/target/web_shop/WEB-INF/lib/interface-1.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/web_shop/target/web_shop/WEB-INF/lib/interface-1.0.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web_shop/target/web_shop/WEB-INF/lib/pojo-1.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/web_shop/target/web_shop/WEB-INF/lib/pojo-1.0.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web_user/src/main/java/com/mycomp/core/controller/userregister/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/web_user/src/main/java/com/mycomp/core/controller/userregister/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_user/src/main/resources/spring/springmvc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web_user/src/main/resources/spring/springmvc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web_user/src/main/java/com/mycomp/core/service/userlogin/UserDetailsServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web_user/src/main/resources/spring/spring-security.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web_user/src/main/resources/spring/spring-security.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web_user/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web_user/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_user/src/main/webapp/js/register.js" beforeDir="false" afterPath="$PROJECT_DIR$/web_user/src/main/webapp/js/register.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_user/src/main/webapp/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/web_user/src/main/webapp/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web_user/src/main/webapp/login.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/web_user/src/main/webapp/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/web_user/src/main/webapp/register.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web_user/target/classes/com/mycomp/core/controller/userregister/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/web_user/target/classes/com/mycomp/core/controller/userregister/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_user/target/classes/spring/springmvc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web_user/target/classes/spring/springmvc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web_user/target/classes/com/mycomp/core/service/userlogin/UserDetailsServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web_user/target/classes/spring/spring-security.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web_user/target/classes/spring/spring-security.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web_user/target/web_user/WEB-INF/classes/com/mycomp/core/controller/userregister/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/web_user/target/web_user/WEB-INF/classes/com/mycomp/core/controller/userregister/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_user/target/web_user/WEB-INF/classes/spring/springmvc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web_user/target/web_user/WEB-INF/classes/spring/springmvc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web_user/target/web_user/WEB-INF/classes/com/mycomp/core/service/userlogin/UserDetailsServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web_user/target/web_user/WEB-INF/classes/spring/spring-security.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web_user/target/web_user/WEB-INF/classes/spring/spring-security.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web_user/target/web_user/WEB-INF/lib/common-1.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/web_user/target/web_user/WEB-INF/lib/common-1.0.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web_user/target/web_user/WEB-INF/lib/interface-1.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/web_user/target/web_user/WEB-INF/lib/interface-1.0.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web_user/target/web_user/WEB-INF/lib/pojo-1.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/web_user/target/web_user/WEB-INF/lib/pojo-1.0.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web_user/target/web_user/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web_user/target/web_user/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_user/target/web_user/js/register.js" beforeDir="false" afterPath="$PROJECT_DIR$/web_user/target/web_user/js/register.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web_user/target/web_user/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/web_user/target/web_user/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/服务器启动项.txt" beforeDir="false" afterPath="$PROJECT_DIR$/服务器启动项.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -136,14 +268,14 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="DatabaseDriversLRU" value="mysql" />
-    <property name="MyBatisLogPluginindexNum" value="6398" />
+    <property name="MyBatisLogPluginindexNum" value="6420" />
     <property name="MyBatisLogPluginparameters" value="Parameters:" />
     <property name="MyBatisLogPluginpreparing" value="Preparing:" />
     <property name="MyBatisLogPluginrunning" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/web_user" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/web_portal/src/main/resources/spring" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -157,26 +289,26 @@
     <selection>jr</selection>
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="H:\IDEA_workspace\FMStorePro\web_portal\src\main\resources\spring" />
+      <recent name="H:\IDEA_workspace\FMStorePro\web_portal" />
+      <recent name="H:\IDEA_workspace\FMStorePro\web_user\src\main\resources\spring" />
+      <recent name="H:\IDEA_workspace\FMStorePro\web_user" />
+      <recent name="H:\IDEA_workspace\FMStorePro\service_sms\src\main\resources\spring" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.mycomp.core.service.sellerlogin" />
+      <recent name="com.mycomp.core.service.userlogin" />
+      <recent name="com.mycomp.core.service.exceptions" />
+      <recent name="com.mycomp.core.controller.portal" />
+      <recent name="com.mycomp.core.controller.admanage" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="H:\IDEA_workspace\FMStorePro\common" />
       <recent name="H:\IDEA_workspace\FMStorePro" />
       <recent name="H:\IDEA_workspace\FMStorePro\web_sellerManagement\src\main\webapp" />
       <recent name="H:\IDEA_workspace\FMStorePro\dao\src\main\resources\com\mycomp\core\dao" />
       <recent name="H:\IDEA_workspace\FMStorePro\generator" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.mycomp.core.service.exceptions" />
-      <recent name="com.mycomp.core.controller.portal" />
-      <recent name="com.mycomp.core.controller.admanage" />
-      <recent name="com.mycomp.core.controller.goodstemplate" />
-      <recent name="com.mycomp.core.controller.goodsmanage" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="H:\IDEA_workspace\FMStorePro\web_user" />
-      <recent name="H:\IDEA_workspace\FMStorePro\web_user\src\main\resources\spring" />
-      <recent name="H:\IDEA_workspace\FMStorePro\service_sms\src\main\resources\spring" />
-      <recent name="H:\IDEA_workspace\FMStorePro\service_sms\src\main\resources" />
-      <recent name="H:\IDEA_workspace\FMStorePro\service_user\src\main\resources" />
     </key>
   </component>
   <component name="RestServicesNavigator">
@@ -189,7 +321,7 @@
       <select />
     </treeState>
   </component>
-  <component name="RunManager" selected="Tomcat Server.service_user">
+  <component name="RunManager" selected="Tomcat Server.web_user">
     <configuration name="DataImportToSolrUtil" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.mycomp.utils.DataImportToSolrUtil" />
       <module name="solr_util" />
@@ -1359,7 +1491,7 @@
     <option name="viewStates">
       <list>
         <serviceView>
-          <option name="contentProportion" value="0.103142075" />
+          <option name="contentProportion" value="0.1386612" />
           <treeState>
             <expand>
               <path>
@@ -1542,7 +1674,17 @@
       <workItem from="1591761698912" duration="14662000" />
       <workItem from="1591803813099" duration="279000" />
       <workItem from="1591805258270" duration="548000" />
-      <workItem from="1591846058579" duration="3607000" />
+      <workItem from="1591846058579" duration="8036000" />
+      <workItem from="1591893922525" duration="17000" />
+      <workItem from="1591934410131" duration="883000" />
+      <workItem from="1591935663969" duration="24000" />
+      <workItem from="1591935771145" duration="3131000" />
+      <workItem from="1591946186926" duration="164000" />
+      <workItem from="1591946387489" duration="116000" />
+      <workItem from="1591946822392" duration="29000" />
+      <workItem from="1591946903467" duration="200000" />
+      <workItem from="1591947989948" duration="146000" />
+      <workItem from="1591948759914" duration="11632000" />
     </task>
     <servers />
   </component>
@@ -1565,10 +1707,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="361" y="71" key="#Updates/0.0.1536.824@0.0.1536.824" timestamp="1589469180082" />
-    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1591793652576">
+    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1591974350270">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1591793652576" />
+    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1591974350270" />
     <state x="493" y="215" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1591587793712">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -1577,10 +1719,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="574" y="122" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1591848524581" />
-    <state x="298" y="337" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1591846962960">
+    <state x="298" y="337" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1591973531586">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="298" y="337" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1536.824@0.0.1536.824" timestamp="1591846962960" />
+    <state x="298" y="337" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1536.824@0.0.1536.824" timestamp="1591973531586" />
     <state width="897" height="466" key="DebuggerActiveHint" timestamp="1591441110688">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -1589,38 +1731,38 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="594" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1591764461209" />
-    <state width="1312" height="257" key="GridCell.Tab.0.bottom" timestamp="1591849667212">
+    <state width="1260" height="298" key="GridCell.Tab.0.bottom" timestamp="1591974849727">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1312" height="257" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1591849667212" />
-    <state width="1312" height="257" key="GridCell.Tab.0.center" timestamp="1591849667212">
+    <state width="1260" height="298" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1591974849727" />
+    <state width="1260" height="298" key="GridCell.Tab.0.center" timestamp="1591974849727">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1312" height="257" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1591849667212" />
-    <state width="1312" height="257" key="GridCell.Tab.0.left" timestamp="1591849667212">
+    <state width="1260" height="298" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1591974849727" />
+    <state width="1260" height="298" key="GridCell.Tab.0.left" timestamp="1591974849727">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1312" height="257" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1591849667212" />
-    <state width="1312" height="257" key="GridCell.Tab.0.right" timestamp="1591849667212">
+    <state width="1260" height="298" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1591974849727" />
+    <state width="1260" height="298" key="GridCell.Tab.0.right" timestamp="1591974849727">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1312" height="257" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1591849667212" />
-    <state width="1312" height="257" key="GridCell.Tab.1.bottom" timestamp="1591849667212">
+    <state width="1260" height="298" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1591974849727" />
+    <state width="1260" height="298" key="GridCell.Tab.1.bottom" timestamp="1591974849727">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1312" height="257" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1591849667212" />
-    <state width="1312" height="257" key="GridCell.Tab.1.center" timestamp="1591849667212">
+    <state width="1260" height="298" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1591974849727" />
+    <state width="1260" height="298" key="GridCell.Tab.1.center" timestamp="1591974849727">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1312" height="257" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1591849667212" />
-    <state width="1312" height="257" key="GridCell.Tab.1.left" timestamp="1591849667212">
+    <state width="1260" height="298" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1591974849727" />
+    <state width="1260" height="298" key="GridCell.Tab.1.left" timestamp="1591974849727">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1312" height="257" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1591849667212" />
-    <state width="1312" height="257" key="GridCell.Tab.1.right" timestamp="1591849667212">
+    <state width="1260" height="298" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1591974849727" />
+    <state width="1260" height="298" key="GridCell.Tab.1.right" timestamp="1591974849727">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1312" height="257" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1591849667212" />
+    <state width="1260" height="298" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1591974849727" />
     <state width="1281" height="286" key="GridCell.Tab.2.bottom" timestamp="1591441719091">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

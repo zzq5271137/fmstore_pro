@@ -50,4 +50,22 @@
         <url-pattern>/*</url-pattern>
     </filter-mapping>
 
+    <!--
+        配置SpringSecurity的委派代理过滤器, filter-name必须是springSecurityFilterChain;
+        SpringSecurity的配置文件(spring-security.xml)已经由springmvc.xml包含了(import标签),
+        所以在上面初始化SpringMVC前端控制器时, 已经同时加载了SpringSecurity的配置文件;
+    -->
+    <filter>
+        <filter-name>springSecurityFilterChain</filter-name>
+        <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>springSecurityFilterChain</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+    <welcome-file-list>
+        <welcome-file>index.html</welcome-file>
+    </welcome-file-list>
+
 </web-app>

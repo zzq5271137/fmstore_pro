@@ -18,14 +18,15 @@
     <http pattern="/js/**" security="none"/>
 
     <!-- 配置不拦截指定页面或请求 -->
-    <http pattern="/login.html" security="none"/>
     <http pattern="/register.html" security="none"/>
-    <http pattern="/favicon.ico" security="none"/>
     <http pattern="/user/sendCode.do" security="none"/>
     <http pattern="/user/addUser.do" security="none"/>
 
-    <!-- use-expressions: 设置是否启动SpEL表达式, 默认值是true -->
-    <http use-expressions="false">
+    <!--
+        use-expressions: 设置是否启动SpEL表达式, 默认值是true;
+        entry-point-ref: 入口点引用;
+    -->
+    <http use-expressions="false" entry-point-ref="casProcessingFilterEntryPoint">
         <!--
             配置SpringSecurity的拦截路径(拦截规则)
             1. pattern: 配置拦截规则
@@ -36,78 +37,89 @@
         -->
         <intercept-url pattern="/**" access="ROLE_USER"/>
 
-        <!--
-            配置具体的页面跳转;
-            login-page: 指定登录页面, 以/开始;
-            login-processing-url: 登录请求路径(提交登录请求/进行认证的请求的路径), 默认值"/login";
-            default-target-url: 登录成功后进入的页面;
-            authentication-failure-url: 登录失败后进入的页面;
-
-            逻辑跟Shiro差不多, 当有请求过来时, 会看这个请求是不是login-processing-url配置的请求路径:
-            1. 如果是:
-               就会直接去做认证(即进行用户名密码校验); 认证成功, 则跳转到default-target-url配置的页面,
-               认证失败, 则跳转到authentication-failure-url配置的页面; 这也是为什么,
-               我们的login.jsp中的登录表格的请求路径要写成login-processing-url配置的路径;
-            2. 如果不是, 会看这个用户有没有认证过:
-               a). 如果没有认证过, 就会跳转到login-page配置的页面, 让用户去输入用户名密码;
-               b). 如果认证过了, 就会执行本来的那个请求(即放行);
-        -->
-        <form-login username-parameter="username"
-                    password-parameter="password"
-                    login-page="/login.html"
-                    login-processing-url="/login"
-                    default-target-url="/home.html"
-                    always-use-default-target="true"
-                    authentication-failure-url="/login.html"/>
-
-        <!--
-            配置退出/注销;
-            invalidate-session: 是否刷新session,
-            logout-url: 退出请求地址,
-            logout-success-url: 退出成功后访问的页面;
-        -->
-        <logout logout-url="/logout" logout-success-url="/login.html"/>
-
         <!-- 不使用csrf的校验(关闭跨域请求) -->
         <csrf disabled="true"/>
 
         <!--
-            配置框架页面不拦截;
-            这个配置是设置html页面中可以使用html的iframe标签和frame标签;
+            custom-filter: 各种过滤器;
+            position: 表示将过滤器放在指定的位置上;
+            before: 表示放在指定位置之前;
+            after: 表示放在指定的位置之后;
         -->
-        <headers>
-            <frame-options policy="SAMEORIGIN"/>
-        </headers>
+        <custom-filter ref="casAuthenticationFilter" position="CAS_FILTER"/>
+        <custom-filter ref="singleLogoutFilter" before="CAS_FILTER"/>
+        <custom-filter ref="requestSingleLogoutFilter" before="LOGOUT_FILTER"/>
     </http>
 
-    <!-- 配置认证管理器 -->
-    <authentication-manager>
-        <!-- 认证信息的提供者, 使用自定义的用户认证器, 从数据库中查询用户名和密码 -->
-        <authentication-provider user-service-ref="userDetailsService">
-            <!-- 配置加密工具类, 登陆认证的时候对用户输入的密码进行加密 -->
-            <password-encoder ref="passwordEncoder"/>
-        </authentication-provider>
-    </authentication-manager>
-
-    <!--
-        自定义的用户认证器, 从数据库中查询用户名和密码, 类似于Shiro中的自定义Realm;
-        一个小细节, 这里使用Spring配置bean的标签前面加上了"beans:", 这是因为,
-        当前配置文件的默认命名空间是xmlns="http://www.springframework.org/schema/security",
-        所以上面的SpringSecurity的相关标签可以直接使用, 而Spring的相关标签需要加上前缀"beans",
-        因为xmlns:beans="http://www.springframework.org/schema/beans";
-    -->
-    <beans:bean id="userDetailsService"
-                class="com.mycomp.core.service.userlogin.UserDetailsServiceImpl">
-        <!-- 通过bean的形式注入远程服务(不使用@Reference注解注入远程服务) -->
-        <beans:property name="userService" ref="userService"/>
+    <!-- 配置CAS入口点 -->
+    <beans:bean id="casProcessingFilterEntryPoint"
+                class="org.springframework.security.cas.web.CasAuthenticationEntryPoint">
+        <!-- 配置单点登录服务器地址, 如果没有登录, 会重定向到CAS服务器当中, 这里是CAS服务器的地址 -->
+        <beans:property name="loginUrl" value="http://192.168.70.3:9100/cas/login"/>
+        <!-- 登录完成之后, 跳回自己的业务系统 -->
+        <beans:property name="serviceProperties" ref="serviceProperties"/>
     </beans:bean>
 
-    <!-- 配置加密工具类 -->
-    <beans:bean id="passwordEncoder"
-                class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder"/>
+    <!-- 配置认证/Ticket校验后的返回地址(自己的业务系统的地址) -->
+    <beans:bean id="serviceProperties" class="org.springframework.security.cas.ServiceProperties">
+        <!--
+            认证/Ticket校验完成之后, 跳回自己的业务系统, 这里是业务系统的地址;
+            注意, 如果跳回的那个工程也配置了CAS(比如跳回本工程, 或者跳回另一个配置了CAS的工程),
+            那么value必须要写成: "该工程的根地址/login/cas" (通过web.xml中配置的welcome-file-list跳转到指定页面)
+        -->
+        <beans:property name="service" value="http://127.0.0.1:8087/login/cas"/>
+    </beans:bean>
 
-    <!-- 通过bean的形式注入远程服务(不使用@Reference注解注入远程服务) -->
-    <dubbo:reference id="userService"
-                     interface="com.mycomp.core.service.userservice.UserService"/>
+    <!-- 配置认证过滤器, 该过滤器负责用户的认证工作 -->
+    <beans:bean id="casAuthenticationFilter"
+                class="org.springframework.security.cas.web.CasAuthenticationFilter">
+        <beans:property name="authenticationManager" ref="authenticationManager"/>
+    </beans:bean>
+
+    <!-- 配置认证管理器 -->
+    <authentication-manager alias="authenticationManager">
+        <!-- 认证信息的提供者 -->
+        <authentication-provider ref="casAuthenticationProvider"/>
+    </authentication-manager>
+
+    <!-- 配置认证信息的提供者 -->
+    <beans:bean id="casAuthenticationProvider"
+                class="org.springframework.security.cas.authentication.CasAuthenticationProvider">
+        <beans:property name="authenticationUserDetailsService">
+            <beans:bean
+                    class="org.springframework.security.core.userdetails.UserDetailsByNameServiceWrapper">
+                <beans:constructor-arg ref="userDetailsService"/>
+            </beans:bean>
+        </beans:property>
+        <!-- 配置票据验证器, 负责对Ticket的校验工作(认证之后) -->
+        <beans:property name="ticketValidator">
+            <beans:bean class="org.jasig.cas.client.validation.Cas20ServiceTicketValidator">
+                <!-- 认证之后, 校验令牌的地址, 这里是CAS服务器的地址 -->
+                <beans:constructor-arg index="0" value="http://192.168.70.3:9100/cas"/>
+            </beans:bean>
+        </beans:property>
+        <!-- Ticket校验完成之后, 跳回自己的业务系统 -->
+        <beans:property name="serviceProperties" ref="serviceProperties"/>
+        <beans:property name="key" value="an_id_for_this_auth_provider_only"/>
+    </beans:bean>
+
+    <!-- 配置自定义的用户认证器(只做授权, 因为认证已经交由CAS做了) -->
+    <beans:bean id="userDetailsService"
+                class="com.mycomp.core.service.userlogin.UserDetailsServiceImpl"/>
+
+    <!-- 配置单点登出 -->
+    <beans:bean id="singleLogoutFilter" class="org.jasig.cas.client.session.SingleSignOutFilter"/>
+
+    <!-- 配置登出后的跳转地址 -->
+    <beans:bean id="requestSingleLogoutFilter"
+                class="org.springframework.security.web.authentication.logout.LogoutFilter">
+        <beans:constructor-arg
+                value="http://192.168.70.3:9100/cas/logout?service=http://127.0.0.1:8087"/>
+        <beans:constructor-arg>
+            <beans:bean
+                    class="org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler"/>
+        </beans:constructor-arg>
+        <beans:property name="filterProcessesUrl" value="/logout/cas"/>
+    </beans:bean>
 
 </beans:beans>

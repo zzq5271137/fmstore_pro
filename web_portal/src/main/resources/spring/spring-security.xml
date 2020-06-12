@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans
+        xmlns="http://www.springframework.org/schema/security"
+        xmlns:beans="http://www.springframework.org/schema/beans"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+        xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/security
+		http://www.springframework.org/schema/security/spring-security.xsd
+        http://code.alibabatech.com/schema/dubbo
+        http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+
+    <!-- 配置放行的资源 -->
+    <http pattern="/css/**" security="none"/>
+    <http pattern="/img/**" security="none"/>
+    <http pattern="/plugins/**" security="none"/>
+    <http pattern="/js/**" security="none"/>
+
+    <!--
+        use-expressions: 设置是否启动SpEL表达式, 默认值是true;
+        entry-point-ref: 入口点引用;
+    -->
+    <http use-expressions="false" entry-point-ref="casProcessingFilterEntryPoint">
+        <!--
+            配置SpringSecurity的拦截路径(拦截规则)
+            1. pattern: 配置拦截规则
+               a). /*: 代表的是根路径下的所有资源(不包含子路径)
+               b). /**: 代表的是根路径下所有的资源(包含子路径)
+            2. access: 设置角色
+               写法: ROLE_角色名称, 如: ROLE_USER、ROLE_ADMIN;
+        -->
+        <intercept-url pattern="/**" access="ROLE_USER"/>
+
+        <!-- 不使用csrf的校验(关闭跨域请求) -->
+        <csrf disabled="true"/>
+
+        <!--
+            custom-filter: 各种过滤器;
+            position: 表示将过滤器放在指定的位置上;
+            before: 表示放在指定位置之前;
+            after: 表示放在指定的位置之后;
+        -->
+        <custom-filter ref="casAuthenticationFilter" position="CAS_FILTER"/>
+        <custom-filter ref="singleLogoutFilter" before="CAS_FILTER"/>
+        <custom-filter ref="requestSingleLogoutFilter" before="LOGOUT_FILTER"/>
+    </http>
+
+    <!-- 配置CAS入口点 -->
+    <beans:bean id="casProcessingFilterEntryPoint"
+                class="org.springframework.security.cas.web.CasAuthenticationEntryPoint">
+        <!-- 配置单点登录服务器地址, 如果没有登录, 会重定向到CAS服务器当中, 这里是CAS服务器的地址 -->
+        <beans:property name="loginUrl" value="http://192.168.70.3:9100/cas/login"/>
+        <!-- 登录完成之后, 跳回自己的业务系统 -->
+        <beans:property name="serviceProperties" ref="serviceProperties"/>
+    </beans:bean>
+
+    <!-- 配置认证/Ticket校验后的返回地址(自己的业务系统的地址) -->
+    <beans:bean id="serviceProperties" class="org.springframework.security.cas.ServiceProperties">
+        <!--
+            认证/Ticket校验完成之后, 跳回自己的业务系统, 这里是业务系统的地址;
+            注意, 如果跳回的那个工程也配置了CAS(比如跳回本工程, 或者跳回另一个配置了CAS的工程),
+            那么value必须要写成: "该工程的根地址/login/cas" (通过web.xml中配置的welcome-file-list跳转到指定页面)
+        -->
+        <beans:property name="service" value="http://127.0.0.1:8084/login/cas"/>
+    </beans:bean>
+
+    <!-- 配置认证过滤器, 该过滤器负责用户的认证工作 -->
+    <beans:bean id="casAuthenticationFilter"
+                class="org.springframework.security.cas.web.CasAuthenticationFilter">
+        <beans:property name="authenticationManager" ref="authenticationManager"/>
+    </beans:bean>
+
+    <!-- 配置认证管理器 -->
+    <authentication-manager alias="authenticationManager">
+        <!-- 认证信息的提供者 -->
+        <authentication-provider ref="casAuthenticationProvider"/>
+    </authentication-manager>
+
+    <!-- 配置认证信息的提供者 -->
+    <beans:bean id="casAuthenticationProvider"
+                class="org.springframework.security.cas.authentication.CasAuthenticationProvider">
+        <beans:property name="authenticationUserDetailsService">
+            <beans:bean
+                    class="org.springframework.security.core.userdetails.UserDetailsByNameServiceWrapper">
+                <beans:constructor-arg ref="userDetailsService"/>
+            </beans:bean>
+        </beans:property>
+        <!-- 配置票据验证器, 负责对Ticket的校验工作(认证之后) -->
+        <beans:property name="ticketValidator">
+            <beans:bean class="org.jasig.cas.client.validation.Cas20ServiceTicketValidator">
+                <!-- 认证之后, 校验令牌的地址, 这里是CAS服务器的地址 -->
+                <beans:constructor-arg index="0" value="http://192.168.70.3:9100/cas"/>
+            </beans:bean>
+        </beans:property>
+        <!-- Ticket校验完成之后, 跳回自己的业务系统 -->
+        <beans:property name="serviceProperties" ref="serviceProperties"/>
+        <beans:property name="key" value="an_id_for_this_auth_provider_only"/>
+    </beans:bean>
+
+    <!-- 配置自定义的用户认证器(只做授权, 因为认证已经交由CAS做了) -->
+    <beans:bean id="userDetailsService"
+                class="com.mycomp.core.service.userlogin.UserDetailsServiceImpl"/>
+
+    <!-- 配置单点登出 -->
+    <beans:bean id="singleLogoutFilter" class="org.jasig.cas.client.session.SingleSignOutFilter"/>
+
+    <!-- 配置登出后的跳转地址 -->
+    <beans:bean id="requestSingleLogoutFilter"
+                class="org.springframework.security.web.authentication.logout.LogoutFilter">
+        <beans:constructor-arg
+                value="http://192.168.70.3:9100/cas/logout?service=http://127.0.0.1:8084"/>
+        <beans:constructor-arg>
+            <beans:bean
+                    class="org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler"/>
+        </beans:constructor-arg>
+        <beans:property name="filterProcessesUrl" value="/logout/cas"/>
+    </beans:bean>
+
+</beans:beans>

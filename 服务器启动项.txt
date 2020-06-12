@@ -37,6 +37,15 @@
    启动: /usr/local/dev/ActiveMQ/apache-activemq-5.12.0/bin/activemq start
    查看: 使用浏览器访问"http://192.168.70.3:8161", 观察是否显示ActiveMQ的主页;
         这是ActiveMQ的后端控制台, 用户名和密码都是"admin";
+7. CAS
+   1). Tomcat
+       启动: /usr/local/dev/cas/tomcat/bin/startup.sh
+       查看: 使用浏览器访问"http://192.168.70.3:9100", 观察是否显示Tomcat的主页;
+       停止: /usr/local/dev/cas/tomcat/bin/shutdown.sh
+   2). CAS是一个JavaWeb应用, 我们部署在Tomcat中, Tomcat启动后, 可以直接通过浏览器访问, 地址:
+       http://192.168.70.3:9100/cas/login
+       这是CAS提供的默认登录页面, 默认用户名为"casuser", 默认密码为"Mellon";
+       我们可以替换为自己的登录页面, 设置自己的用户名和密码;
 
 配置FastDFS和Nginx开机自启动, 编辑/etc/rc.d/rc.local文件, 增加启动项:
 1. 在CentOS7中, /etc/rc.d/rc.local文件的权限被降低了, 需要给rc.local文件增加可执行的权限:

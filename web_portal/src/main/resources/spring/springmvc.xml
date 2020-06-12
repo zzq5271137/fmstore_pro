@@ -59,4 +59,6 @@
     <!-- 因为这里是服务的消费方, 所以不需要配置端口) -->
     <!-- <dubbo:protocol name="dubbo" port="20881"/> -->
 
+    <import resource="spring-security.xml"/>
+
 </beans>
