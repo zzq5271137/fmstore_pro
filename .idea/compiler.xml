@@ -10,11 +10,12 @@
         <module name="pojo" />
         <module name="web_portal" />
         <module name="service_page" />
+        <module name="service_buyer" />
         <module name="dao" />
-        <module name="web_manager" />
         <module name="service_search" />
         <module name="service_sms" />
         <module name="service_user" />
+        <module name="web_manager" />
         <module name="web_shop" />
         <module name="solr_util" />
         <module name="interface" />
@@ -38,6 +39,7 @@
       <module name="dao" options="" />
       <module name="interface" options="" />
       <module name="pojo" options="" />
+      <module name="service_buyer" options="" />
       <module name="service_manager" options="" />
       <module name="service_page" options="" />
       <module name="service_search" options="" />

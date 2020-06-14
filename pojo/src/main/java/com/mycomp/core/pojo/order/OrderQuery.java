@@ -6,6 +6,7 @@ import java.util.Date;
 import java.util.List;
 
 public class OrderQuery {
+
     protected String orderByClause;
 
     protected boolean distinct;
@@ -68,7 +69,7 @@ public class OrderQuery {
     }
 
     public void setFields(String fields) {
-        this.fields=fields;
+        this.fields = fields;
     }
 
     public String getFields() {

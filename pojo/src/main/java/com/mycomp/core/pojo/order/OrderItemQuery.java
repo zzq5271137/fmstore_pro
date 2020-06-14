@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class OrderItemQuery {
+
     protected String orderByClause;
 
     protected boolean distinct;
@@ -67,7 +68,7 @@ public class OrderItemQuery {
     }
 
     public void setFields(String fields) {
-        this.fields=fields;
+        this.fields = fields;
     }
 
     public String getFields() {

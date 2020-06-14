@@ -7,25 +7,27 @@ import org.apache.ibatis.annotations.Param;
 import java.util.List;
 
 public interface OrderItemDao {
-    int countByExample(OrderItemQuery example);
 
-    int deleteByExample(OrderItemQuery example);
+    OrderItem selectByPrimaryKey(Long id);
 
-    int deleteByPrimaryKey(Long id);
+    List<OrderItem> selectByExample(OrderItemQuery example);
 
     int insert(OrderItem record);
 
     int insertSelective(OrderItem record);
 
-    List<OrderItem> selectByExample(OrderItemQuery example);
-
-    OrderItem selectByPrimaryKey(Long id);
-
-    int updateByExampleSelective(@Param("record") OrderItem record, @Param("example") OrderItemQuery example);
-
-    int updateByExample(@Param("record") OrderItem record, @Param("example") OrderItemQuery example);
+    int updateByPrimaryKey(OrderItem record);
 
     int updateByPrimaryKeySelective(OrderItem record);
 
-    int updateByPrimaryKey(OrderItem record);
+    int updateByExample(@Param("record") OrderItem record, @Param("example") OrderItemQuery example);
+
+    int updateByExampleSelective(@Param("record") OrderItem record, @Param("example") OrderItemQuery example);
+
+    int deleteByPrimaryKey(Long id);
+
+    int deleteByExample(OrderItemQuery example);
+
+    int countByExample(OrderItemQuery example);
+
 }

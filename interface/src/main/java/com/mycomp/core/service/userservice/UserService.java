@@ -9,6 +9,4 @@ public interface UserService {
 
     void addUser(String smscode, User user) throws WrongSmscodeException;
 
-    User getUserByUsername(String username);
-
 }

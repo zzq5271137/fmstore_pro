@@ -18,4 +18,7 @@ public interface RedisKeys {
     // 规格列表
     String SPEC_LIST_REDIS = "specList";
 
+    // 购物车列表
+    String CART_LIST_REDIS = "cartList";
+
 }

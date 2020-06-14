@@ -17,11 +17,21 @@
     <http pattern="/plugins/**" security="none"/>
     <http pattern="/js/**" security="none"/>
 
+    <!-- 配置不拦截指定页面或请求 -->
+    <http pattern="/index.html" security="none"/>
+    <http pattern="/search.html" security="none"/>
+    <http pattern="/cart.html" security="none"/>
+    <http pattern="/content/getContentByCategoryId.do" security="none"/>
+
     <!--
         use-expressions: 设置是否启动SpEL表达式, 默认值是true;
         entry-point-ref: 入口点引用;
     -->
     <http use-expressions="false" entry-point-ref="casProcessingFilterEntryPoint">
+        <!-- 匿名角色, IS_AUTHENTICATED_ANONYMOUSLY, 默认用户名为"anonymousUser" -->
+        <intercept-url pattern="/cart/*.do" access="IS_AUTHENTICATED_ANONYMOUSLY"/>
+        <intercept-url pattern="/itemsearch/*.do" access="IS_AUTHENTICATED_ANONYMOUSLY"/>
+
         <!--
             配置SpringSecurity的拦截路径(拦截规则)
             1. pattern: 配置拦截规则
