@@ -67,7 +67,7 @@
             注意, 如果跳回的那个工程也配置了CAS(比如跳回本工程, 或者跳回另一个配置了CAS的工程),
             那么value必须要写成: "该工程的根地址/login/cas" (通过web.xml中配置的welcome-file-list跳转到指定页面)
         -->
-        <beans:property name="service" value="http://127.0.0.1:8087/login/cas"/>
+        <beans:property name="service" value="http://localhost:8087/login/cas"/>
     </beans:bean>
 
     <!-- 配置认证过滤器, 该过滤器负责用户的认证工作 -->
