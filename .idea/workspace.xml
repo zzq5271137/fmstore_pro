@@ -7,8 +7,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3ac7d70b-d1cf-48c5-b158-f47fe452bd9c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/web_portal/src/main/resources/spring/spring-security.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web_portal/src/main/resources/spring/spring-security.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_user/src/main/resources/spring/spring-security.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web_user/src/main/resources/spring/spring-security.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dao/src/main/java/com/mycomp/core/dao/address/AddressDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dao/src/main/resources/com/mycomp/core/dao/address/AddressDao.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pojo/src/main/java/com/mycomp/core/pojo/address/Address.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pojo/src/main/java/com/mycomp/core/pojo/address/AddressQuery.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web_portal/src/main/webapp/js/getOrderInfo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dao/src/main/java/com/mycomp/core/dao/log/PayLogDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/dao/src/main/java/com/mycomp/core/dao/log/PayLogDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dao/src/main/resources/com/mycomp/core/dao/log/PayLogDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/dao/src/main/resources/com/mycomp/core/dao/log/PayLogDao.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pojo/src/main/java/com/mycomp/core/pojo/log/PayLog.java" beforeDir="false" afterPath="$PROJECT_DIR$/pojo/src/main/java/com/mycomp/core/pojo/log/PayLog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pojo/src/main/java/com/mycomp/core/pojo/log/PayLogQuery.java" beforeDir="false" afterPath="$PROJECT_DIR$/pojo/src/main/java/com/mycomp/core/pojo/log/PayLogQuery.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web_portal/src/main/webapp/getOrderInfo.html" beforeDir="false" afterPath="$PROJECT_DIR$/web_portal/src/main/webapp/getOrderInfo.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,8 +66,8 @@
       <list>
         <option value="Jsp File" />
         <option value="JavaScript File" />
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -1450,11 +1458,6 @@
                 <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
                 <item name="Tomcat Server" type="7427dc5b:ServiceModel$ServiceGroupNode" />
               </path>
-              <path>
-                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-                <item name="Tomcat Server" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-                <item name="Finished" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              </path>
             </expand>
             <select />
           </treeState>
@@ -1644,6 +1647,7 @@
       <workItem from="1592121515117" duration="9455000" />
       <workItem from="1592138660931" duration="338000" />
       <workItem from="1592139056327" duration="829000" />
+      <workItem from="1592140742172" duration="1153000" />
     </task>
     <servers />
   </component>

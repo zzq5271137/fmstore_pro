@@ -7,25 +7,27 @@ import org.apache.ibatis.annotations.Param;
 import java.util.List;
 
 public interface PayLogDao {
-    int countByExample(PayLogQuery example);
 
-    int deleteByExample(PayLogQuery example);
+    PayLog selectByPrimaryKey(String outTradeNo);
 
-    int deleteByPrimaryKey(String outTradeNo);
+    List<PayLog> selectByExample(PayLogQuery example);
 
     int insert(PayLog record);
 
     int insertSelective(PayLog record);
 
-    List<PayLog> selectByExample(PayLogQuery example);
-
-    PayLog selectByPrimaryKey(String outTradeNo);
-
-    int updateByExampleSelective(@Param("record") PayLog record, @Param("example") PayLogQuery example);
-
-    int updateByExample(@Param("record") PayLog record, @Param("example") PayLogQuery example);
+    int updateByPrimaryKey(PayLog record);
 
     int updateByPrimaryKeySelective(PayLog record);
 
-    int updateByPrimaryKey(PayLog record);
+    int updateByExample(@Param("record") PayLog record, @Param("example") PayLogQuery example);
+
+    int updateByExampleSelective(@Param("record") PayLog record, @Param("example") PayLogQuery example);
+
+    int deleteByPrimaryKey(String outTradeNo);
+
+    int deleteByExample(PayLogQuery example);
+
+    int countByExample(PayLogQuery example);
+
 }
