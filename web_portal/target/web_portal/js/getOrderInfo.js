@@ -70,24 +70,5 @@ new Vue({
             }
             return totalValue;
         },
-        submitOrder: function () {
-            this.order.receiverAreaName = this.address.address;
-            this.order.receiverMobile = this.address.mobile;
-            this.order.receiver = this.address.contact;
-            let _this = this;
-            axios.post("order/add.do", this.order).then(function (response) {
-                if (response.data.success) {
-                    if (_this.order.paymentType === '1') {
-                        location.href = "pay.html";
-                    } else {
-                        location.href = "paysuccess.html";
-                    }
-                } else {
-                    alert(response.data.message);
-                }
-            }).catch(function (reason) {
-                console.log(reason);
-            })
-        }
-    },
+    }
 });

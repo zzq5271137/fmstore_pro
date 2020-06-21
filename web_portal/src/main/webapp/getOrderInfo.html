@@ -99,40 +99,25 @@
                     <div class="addressInfo">
                         <ul class="addr-detail">
                             <li class="addr-item">
-                                <div>
-                                    <div class="con name selected"><a
-                                            href="javascript:;">FMJava<span
-                                            title="点击取消选择"></span>&nbsp;</a></div>
-                                    <div class="con address">FMJava 江苏省南京市*****102街道 新街口 <span>185****8754</span>
-                                        <span class="base">默认地址</span>
-                                        <span class="edittext"><a data-toggle="modal"
-                                                                  data-target=".edit"
-                                                                  data-keyboard="false">编辑</a>&nbsp;&nbsp;<a
-                                                href="javascript:;">删除</a></span>
+                                <div v-for="addressItem in addressList">
+                                    <div :class="['con' ,'name', isSeletedAddress(addressItem) ? 'selected' : '']">
+                                        <a href="javascript:;" @click="selectAddress(addressItem)">
+                                            {{ addressItem.contact }}
+                                            <span title="点击取消选择"></span>&nbsp;
+                                        </a>
                                     </div>
-                                    <div class="clearfix"></div>
-                                </div>
-                                <div>
-                                    <div class="con name"><a href="javascript:;">鲁班<span
-                                            title="点击取消选择"/>&nbsp;</a></div>
-                                    <div class="con address">鲁** 王************* *****
-                                        <span>185****8754</span>
-                                        <span class="edittext"><a data-toggle="modal"
-                                                                  data-target=".edit"
-                                                                  data-keyboard="false">编辑</a>&nbsp;&nbsp;<a
-                                                href="javascript:;">删除</a></span>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                </div>
-                                <div>
-                                    <div class="con name"><a href="javascript:;">后**<span
-                                            title="点击取消选择"/>&nbsp</a></div>
-                                    <div class="con address">后** 王*****************8号楼
-                                        <span>185****8754</span>
-                                        <span class="edittext"><a data-toggle="modal"
-                                                                  data-target=".edit"
-                                                                  data-keyboard="false">编辑</a>&nbsp;&nbsp;<a
-                                                href="javascript:;">删除</a></span>
+                                    <div class="con address">
+                                        {{ addressItem.address }}
+                                        <span>{{ addressItem.mobile }}</span>
+                                        <span class="base"
+                                              v-if="addressItem.isDefault=='1'">默认地址</span>
+                                        <span class="edittext">
+                                            <a data-toggle="modal" data-target=".edit"
+                                               data-keyboard="false">
+                                                编辑
+                                            </a>&nbsp;&nbsp;
+                                            <a href="javascript:;">删除</a>
+                                        </span>
                                     </div>
                                     <div class="clearfix"></div>
                                 </div>
@@ -175,8 +160,9 @@
                     </div>
                     <div class="step-cont">
                         <ul class="payType">
-                            <li class="selected">微信付款<span title="点击取消选择"></span></li>
-                            <li>货到付款<span title="点击取消选择"></span></li>
+                            <li class="selected" @click="selectPayType('1')">微信付款<span
+                                    title="点击取消选择"></span></li>
+                            <li @click="selectPayType('1')">货到付款<span title="点击取消选择"></span></li>
                         </ul>
                     </div>
                     <div class="hr"></div>
@@ -186,45 +172,23 @@
                     <div class="step-cont">
                         <ul class="send-detail">
                             <li>
-                                <div class="sendGoods">
-                                    <ul class="yui3-g">
+                                <div class="sendGoods" v-for="cart in cartList">
+                                    <ul class="yui3-g" v-for="item in cart.orderItemList">
                                         <li class="yui3-u-1-6">
-                                            <span><img src="img/cart1.jpg"/></span>
+                                            <span>
+                                                <img width="100px" height="100px"
+                                                     :src="item.picPath"/>
+                                            </span>
                                         </li>
                                         <li class="yui3-u-7-12">
-                                            <div class="desc"> 华为 HUAWEI nova 5 Pro
-                                                前置3200万人像超级夜景4800万AI四摄麒麟980
-                                            </div>
-                                            <div class="seven">7天无理由退款</div>
+                                            <div class="desc">{{ item.title }}</div>
+                                            <div class="seven">7天无理由退货</div>
                                         </li>
                                         <li class="yui3-u-1-12">
-                                            <div class="price">￥2999.00</div>
+                                            <div class="price">￥{{ item.price }}</div>
                                         </li>
                                         <li class="yui3-u-1-12">
-                                            <div class="num">X1</div>
-                                        </li>
-                                        <li class="yui3-u-1-12">
-                                            <div class="exit">有货</div>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="sendGoods">
-                                    <ul class="yui3-g">
-                                        <li class="yui3-u-1-6">
-                                            <span><img src="img/cart2.jpg"/></span>
-                                        </li>
-                                        <li class="yui3-u-7-12">
-                                            <div class="desc"> 小米9 4800万超广角三摄 6GB+128GB深空灰 骁龙855 全网通
-                                            </div>
-                                            <div class="seven">7天无理由退款</div>
-                                        </li>
-                                        <li class="yui3-u-1-12">
-                                            <div class="price">￥2799.00</div>
-                                        </li>
-                                        <li class="yui3-u-1-12">
-                                            <div class="num">X1</div>
+                                            <div class="num">X{{ item.num }}</div>
                                         </li>
                                         <li class="yui3-u-1-12">
                                             <div class="exit">有货</div>
@@ -248,8 +212,8 @@
         <div class="order-summary">
             <div class="static fr">
                 <div class="list">
-                    <span><i class="number">2</i>件商品，总商品金额</span>
-                    <em class="allprice">¥5798.00</em>
+                    <span><i class="number">{{ totalValue.totalNum }}</i>件商品，总商品金额</span>
+                    <em class="allprice">¥{{ totalValue.totalMoney.toFixed(2) }}</em>
                 </div>
                 <div class="list">
                     <span>返现：</span>
@@ -263,12 +227,16 @@
         </div>
 
         <div class="clearfix trade">
-            <div class="fc-price">应付金额:　<span class="price">¥5808.00</span></div>
-            <div class="fc-receiverInfo">寄送至:江苏省南京市*****102街道 收货人：FMJava 185****8754</div>
+            <div class="fc-price">应付金额:　
+                <span class="price">¥{{ totalValue.totalMoney.toFixed(2) }}</span>
+            </div>
+            <div class="fc-receiverInfo">
+                寄送至:{{ address.address }} 收货人：{{ address.contact }} 电话:{{ address.mobile }}
+            </div>
         </div>
 
         <div class="submit">
-            <a class="sui-btn btn-danger btn-xlarge" href="pay.html">提交订单</a>
+            <a class="sui-btn btn-danger btn-xlarge" @click="submitOrder">提交订单</a>
         </div>
     </div>
 

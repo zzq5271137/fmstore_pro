@@ -23,4 +23,11 @@
     <!-- 配置包扫描, 在这个包下面的service实现类上写@service注解才会生效 -->
     <dubbo:annotation package="com.mycomp.core.service"/>
 
+    <bean id="idWorker" class="com.mycomp.utils.IdWorker">
+        <!-- 设置机器号, 不重复就可以 -->
+        <constructor-arg index="0" value="1"/>
+        <!-- 生成12为随机数的种子 -->
+        <constructor-arg index="1" value="0"/>
+    </bean>
+
 </beans>

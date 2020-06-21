@@ -2,21 +2,42 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="web_user:war exploded" />
+      <artifact name="service_buyer:war exploded" />
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3ac7d70b-d1cf-48c5-b158-f47fe452bd9c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/dao/src/main/java/com/mycomp/core/dao/address/AddressDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dao/src/main/resources/com/mycomp/core/dao/address/AddressDao.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pojo/src/main/java/com/mycomp/core/pojo/address/Address.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pojo/src/main/java/com/mycomp/core/pojo/address/AddressQuery.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web_portal/src/main/webapp/js/getOrderInfo.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dao/src/main/java/com/mycomp/core/dao/log/PayLogDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/dao/src/main/java/com/mycomp/core/dao/log/PayLogDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dao/src/main/resources/com/mycomp/core/dao/log/PayLogDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/dao/src/main/resources/com/mycomp/core/dao/log/PayLogDao.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pojo/src/main/java/com/mycomp/core/pojo/log/PayLog.java" beforeDir="false" afterPath="$PROJECT_DIR$/pojo/src/main/java/com/mycomp/core/pojo/log/PayLog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pojo/src/main/java/com/mycomp/core/pojo/log/PayLogQuery.java" beforeDir="false" afterPath="$PROJECT_DIR$/pojo/src/main/java/com/mycomp/core/pojo/log/PayLogQuery.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/com/mycomp/utils/IdWorker.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/interface/src/main/java/com/mycomp/core/service/buyerservice/AddressService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/interface/src/main/java/com/mycomp/core/service/buyerservice/OrderService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service_buyer/src/main/java/com/mycomp/core/service/buyerservice/impl/AddressServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service_buyer/src/main/java/com/mycomp/core/service/buyerservice/impl/OrderServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web_portal/src/main/java/com/mycomp/core/controller/portal/AddressController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web_portal/src/main/java/com/mycomp/core/controller/portal/OrderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dao/target/classes/com/mycomp/core/dao/log/PayLogDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/dao/target/classes/com/mycomp/core/dao/log/PayLogDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dao/target/classes/com/mycomp/core/dao/log/PayLogDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/dao/target/classes/com/mycomp/core/dao/log/PayLogDao.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/log/PayLog.class" beforeDir="false" afterPath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/log/PayLog.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/log/PayLogQuery$Criteria.class" beforeDir="false" afterPath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/log/PayLogQuery$Criteria.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/log/PayLogQuery$Criterion.class" beforeDir="false" afterPath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/log/PayLogQuery$Criterion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/log/PayLogQuery$GeneratedCriteria.class" beforeDir="false" afterPath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/log/PayLogQuery$GeneratedCriteria.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/log/PayLogQuery.class" beforeDir="false" afterPath="$PROJECT_DIR$/pojo/target/classes/com/mycomp/core/pojo/log/PayLogQuery.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service_buyer/src/main/resources/spring/applicationContext-service.xml" beforeDir="false" afterPath="$PROJECT_DIR$/service_buyer/src/main/resources/spring/applicationContext-service.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service_buyer/target/service_buyer/WEB-INF/lib/dao-1.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/service_buyer/target/service_buyer/WEB-INF/lib/dao-1.0.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service_buyer/target/service_buyer/WEB-INF/lib/interface-1.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/service_buyer/target/service_buyer/WEB-INF/lib/interface-1.0.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service_buyer/target/service_buyer/WEB-INF/lib/pojo-1.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/service_buyer/target/service_buyer/WEB-INF/lib/pojo-1.0.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service_page/target/service_page/WEB-INF/lib/dao-1.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/service_page/target/service_page/WEB-INF/lib/dao-1.0.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service_page/target/service_page/WEB-INF/lib/interface-1.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/service_page/target/service_page/WEB-INF/lib/interface-1.0.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service_page/target/service_page/WEB-INF/lib/pojo-1.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/service_page/target/service_page/WEB-INF/lib/pojo-1.0.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service_user/target/service_user/WEB-INF/lib/dao-1.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/service_user/target/service_user/WEB-INF/lib/dao-1.0.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service_user/target/service_user/WEB-INF/lib/interface-1.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/service_user/target/service_user/WEB-INF/lib/interface-1.0.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service_user/target/service_user/WEB-INF/lib/pojo-1.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/service_user/target/service_user/WEB-INF/lib/pojo-1.0.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web_portal/src/main/webapp/getOrderInfo.html" beforeDir="false" afterPath="$PROJECT_DIR$/web_portal/src/main/webapp/getOrderInfo.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web_portal/src/main/webapp/js/getOrderInfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/web_portal/src/main/webapp/js/getOrderInfo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web_portal/target/web_portal/WEB-INF/lib/interface-1.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/web_portal/target/web_portal/WEB-INF/lib/interface-1.0.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web_portal/target/web_portal/WEB-INF/lib/pojo-1.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/web_portal/target/web_portal/WEB-INF/lib/pojo-1.0.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web_portal/target/web_portal/getOrderInfo.html" beforeDir="false" afterPath="$PROJECT_DIR$/web_portal/target/web_portal/getOrderInfo.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web_user/target/web_user/WEB-INF/lib/interface-1.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/web_user/target/web_user/WEB-INF/lib/interface-1.0.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web_user/target/web_user/WEB-INF/lib/pojo-1.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/web_user/target/web_user/WEB-INF/lib/pojo-1.0.jar" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,8 +87,8 @@
       <list>
         <option value="Jsp File" />
         <option value="JavaScript File" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -113,7 +134,7 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="DatabaseDriversLRU" value="mysql" />
-    <property name="MyBatisLogPluginindexNum" value="6467" />
+    <property name="MyBatisLogPluginindexNum" value="6482" />
     <property name="MyBatisLogPluginparameters" value="Parameters:" />
     <property name="MyBatisLogPluginpreparing" value="Preparing:" />
     <property name="MyBatisLogPluginrunning" value="true" />
@@ -1451,7 +1472,7 @@
     <option name="viewStates">
       <list>
         <serviceView>
-          <option name="contentProportion" value="0.11543716" />
+          <option name="contentProportion" value="0.1215847" />
           <treeState>
             <expand>
               <path>
@@ -1648,6 +1669,14 @@
       <workItem from="1592138660931" duration="338000" />
       <workItem from="1592139056327" duration="829000" />
       <workItem from="1592140742172" duration="1153000" />
+      <workItem from="1592214610636" duration="1786000" />
+      <workItem from="1592293029970" duration="2818000" />
+      <workItem from="1592361741125" duration="10191000" />
+      <workItem from="1592494354387" duration="2269000" />
+      <workItem from="1592497430537" duration="254000" />
+      <workItem from="1592530695829" duration="3087000" />
+      <workItem from="1592632424494" duration="4225000" />
+      <workItem from="1592767982560" duration="64000" />
     </task>
     <servers />
   </component>
@@ -1678,10 +1707,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="493" y="215" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1591587793712" />
-    <state x="574" y="122" key="#com.intellij.ide.util.MemberChooser" timestamp="1592124649816">
+    <state x="574" y="122" key="#com.intellij.ide.util.MemberChooser" timestamp="1592559857738">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="574" y="122" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1592124649816" />
+    <state x="574" y="122" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1592559857738" />
     <state x="298" y="337" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1591973531586">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -1698,38 +1727,38 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="594" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1591764461209" />
-    <state width="1294" height="246" key="GridCell.Tab.0.bottom" timestamp="1592139885482">
+    <state width="1285" height="312" key="GridCell.Tab.0.bottom" timestamp="1592408444504">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1294" height="246" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1592139885482" />
-    <state width="1294" height="246" key="GridCell.Tab.0.center" timestamp="1592139885482">
+    <state width="1285" height="312" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1592408444504" />
+    <state width="1285" height="312" key="GridCell.Tab.0.center" timestamp="1592408444504">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1294" height="246" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1592139885482" />
-    <state width="1294" height="246" key="GridCell.Tab.0.left" timestamp="1592139885482">
+    <state width="1285" height="312" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1592408444504" />
+    <state width="1285" height="312" key="GridCell.Tab.0.left" timestamp="1592408444504">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1294" height="246" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1592139885482" />
-    <state width="1294" height="246" key="GridCell.Tab.0.right" timestamp="1592139885482">
+    <state width="1285" height="312" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1592408444504" />
+    <state width="1285" height="312" key="GridCell.Tab.0.right" timestamp="1592408444504">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1294" height="246" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1592139885482" />
-    <state width="1294" height="246" key="GridCell.Tab.1.bottom" timestamp="1592139885482">
+    <state width="1285" height="312" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1592408444504" />
+    <state width="1285" height="312" key="GridCell.Tab.1.bottom" timestamp="1592408444505">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1294" height="246" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1592139885482" />
-    <state width="1294" height="246" key="GridCell.Tab.1.center" timestamp="1592139885482">
+    <state width="1285" height="312" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1592408444505" />
+    <state width="1285" height="312" key="GridCell.Tab.1.center" timestamp="1592408444505">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1294" height="246" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1592139885482" />
-    <state width="1294" height="246" key="GridCell.Tab.1.left" timestamp="1592139885482">
+    <state width="1285" height="312" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1592408444505" />
+    <state width="1285" height="312" key="GridCell.Tab.1.left" timestamp="1592408444504">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1294" height="246" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1592139885482" />
-    <state width="1294" height="246" key="GridCell.Tab.1.right" timestamp="1592139885482">
+    <state width="1285" height="312" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1592408444504" />
+    <state width="1285" height="312" key="GridCell.Tab.1.right" timestamp="1592408444505">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1294" height="246" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1592139885482" />
+    <state width="1285" height="312" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1592408444505" />
     <state width="1314" height="412" key="GridCell.Tab.2.bottom" timestamp="1592129631374">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
